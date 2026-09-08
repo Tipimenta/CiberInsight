@@ -1,0 +1,4188 @@
+{
+  "schemaVersion": "1.0",
+  "version": "v0.5",
+  "status": "draft",
+  "language": "pt-BR",
+  "totalQuestions": 93,
+  "totalDimensions": 9,
+  "primaryFramework": "NIST Cybersecurity Framework 2.0",
+  "legalPrivacyContext": [
+    "LGPD",
+    "ANPD"
+  ],
+  "dimensions": [
+    {
+      "id": "D01",
+      "order": 1,
+      "name": "Governança, risco e terceiros",
+      "questionCount": 12,
+      "questionIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "D02",
+      "order": 2,
+      "name": "Ativos, dados, processos e riscos",
+      "questionCount": 11,
+      "questionIds": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "id": "D03",
+      "order": 3,
+      "name": "Identidades, acessos e fator humano",
+      "questionCount": 12,
+      "questionIds": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "id": "D04",
+      "order": 4,
+      "name": "Proteção de dados, LGPD e compartilhamento",
+      "questionCount": 11,
+      "questionIds": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "id": "D05",
+      "order": 5,
+      "name": "Infraestrutura, redes, sistemas e dispositivos",
+      "questionCount": 11,
+      "questionIds": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "id": "D06",
+      "order": 6,
+      "name": "Detecção e monitoramento",
+      "questionCount": 10,
+      "questionIds": [
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "id": "D07",
+      "order": 7,
+      "name": "Resposta a incidentes",
+      "questionCount": 10,
+      "questionIds": [
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "id": "D08",
+      "order": 8,
+      "name": "Continuidade e recuperação",
+      "questionCount": 8,
+      "questionIds": [
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "id": "D09",
+      "order": 9,
+      "name": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "questionCount": 8,
+      "questionIds": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "Existe uma pessoa ou função formalmente designada para coordenar a segurança da informação e a cibersegurança na organização?",
+      "criteria": {
+        "0": "Não há pessoa ou função reconhecida como responsável por coordenar segurança/cibersegurança.",
+        "1": "Alguém assume essa responsabilidade na prática, mas de forma informal e sem designação clara.",
+        "2": "Há responsável formal, porém atribuições, autoridade, substituição, divulgação ou acompanhamento ainda são incompletos.",
+        "3": "Há responsável formalmente designado, com atribuições claras, atuação efetiva e evidência da designação."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-02",
+          "GV.RR-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "designação, organograma, descrição de função, ato interno ou evidência inequívoca de atribuição",
+      "relatedQuestionIds": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": 2,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "As responsabilidades de segurança da informação estão definidas para a direção, a TI, os gestores, os usuários e os prestadores de serviço?",
+      "criteria": {
+        "0": "Papéis e responsabilidades de segurança não estão definidos.",
+        "1": "A TI ou algumas pessoas assumem responsabilidades informalmente, sem definição para os demais públicos.",
+        "2": "Responsabilidades estão definidas para parte dos envolvidos ou estão documentadas, mas pouco comunicadas/aplicadas.",
+        "3": "Responsabilidades de direção, TI, gestores, usuários e prestadores estão definidas, comunicadas e aplicadas."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F11",
+          "F03"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "política, matriz de responsabilidades, contratos, normas internas ou registros de comunicação",
+      "relatedQuestionIds": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": 3,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "Existe uma política de segurança da informação formalmente aprovada pela direção?",
+      "criteria": {
+        "0": "Não existe Política de Segurança da Informação.",
+        "1": "Existem regras/orientações dispersas ou uma minuta, mas sem política formal aprovada.",
+        "2": "Existe política formalmente aprovada, porém com lacunas de abrangência, divulgação ou aplicação.",
+        "3": "Existe política de segurança da informação formalmente aprovada pela direção, divulgada e aplicável ao ambiente."
+      },
+      "references": {
+        "nist": [
+          "GV.PO-01"
+        ],
+        "lgpd": [
+          "LGPD art. 50"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.1 — Política de Segurança da Informação"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F11"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "política aprovada, versão, data, responsável e evidência de divulgação",
+      "relatedQuestionIds": [
+        4,
+        7
+      ]
+    },
+    {
+      "id": 4,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "As políticas e os procedimentos de segurança são revisados periodicamente ou após mudanças relevantes e incidentes?",
+      "criteria": {
+        "0": "Políticas e procedimentos não são revisados.",
+        "1": "Revisões ocorrem apenas de forma eventual, quando surge algum problema ou necessidade.",
+        "2": "Existe alguma periodicidade ou gatilho de revisão, mas a prática não cobre todos os documentos relevantes ou não deixa registro consistente.",
+        "3": "Há ciclo e gatilhos definidos de revisão, incluindo mudanças/incidentes relevantes, com registro das atualizações."
+      },
+      "references": {
+        "nist": [
+          "GV.PO-02",
+          "ID.IM-03"
+        ],
+        "lgpd": [
+          "LGPD art. 50"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.1 — Política de Segurança da Informação"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F04",
+          "F09"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "histórico de versões, atas, registros de revisão, aprovação ou atualização após incidentes",
+      "relatedQuestionIds": [
+        3,
+        77
+      ]
+    },
+    {
+      "id": 5,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "A organização realiza avaliações periódicas dos riscos cibernéticos que podem afetar suas atividades e os dados dos pacientes?",
+      "criteria": {
+        "0": "Não são realizadas avaliações de risco cibernético.",
+        "1": "Riscos são discutidos apenas informalmente ou de forma reativa após problemas.",
+        "2": "Há avaliações de risco em parte do ambiente ou em alguns períodos, mas com documentação, cobertura ou acompanhamento incompletos.",
+        "3": "Avaliações periódicas e documentadas cobrem os principais serviços, ativos, dados e dependências, com resultados acompanhados."
+      },
+      "references": {
+        "nist": [
+          "ID.RA-05"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021)"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "matriz/registro de riscos, relatórios de avaliação, atas, plano de tratamento",
+      "relatedQuestionIds": [
+        6,
+        23
+      ]
+    },
+    {
+      "id": 6,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "Existem critérios definidos para classificar, priorizar, tratar ou aceitar riscos de segurança?",
+      "criteria": {
+        "0": "Não há critérios para classificar, priorizar, tratar ou aceitar riscos.",
+        "1": "Os riscos são priorizados principalmente pela percepção das pessoas, sem critérios definidos.",
+        "2": "Existem critérios básicos, mas são aplicados de forma inconsistente ou sem registro de tratamento/aceitação.",
+        "3": "Critérios definidos são usados de forma consistente para classificar, priorizar, tratar e aceitar riscos, com registro das decisões."
+      },
+      "references": {
+        "nist": [
+          "GV.RM-06",
+          "GV.RM-04",
+          "GV.RM-02"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021)"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "metodologia de riscos, critérios de impacto/probabilidade, apetite/tolerância, aprovações",
+      "relatedQuestionIds": [
+        5,
+        23,
+        8
+      ]
+    },
+    {
+      "id": 7,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "Os requisitos legais, regulatórios, contratuais e de privacidade aplicáveis ao tratamento de dados são identificados e acompanhados?",
+      "criteria": {
+        "0": "Requisitos legais, regulatórios, contratuais e de privacidade não são identificados de forma estruturada.",
+        "1": "Alguns requisitos são conhecidos por experiência, mas não há acompanhamento organizado.",
+        "2": "Os principais requisitos estão identificados, porém há lacunas de responsáveis, atualização, documentação ou acompanhamento.",
+        "3": "Os requisitos aplicáveis estão identificados, possuem responsáveis/fontes de acompanhamento e são revistos quando necessário."
+      },
+      "references": {
+        "nist": [
+          "GV.OC-03"
+        ],
+        "lgpd": [
+          "LGPD (Lei nº 13.709/2018), enquanto requisito de privacidade aplicável"
+        ],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "inventário de requisitos, pareceres, matriz legal, controles de atualização",
+      "relatedQuestionIds": [
+        36,
+        39,
+        11
+      ]
+    },
+    {
+      "id": 8,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "A direção participa das decisões sobre riscos, prioridades e investimentos relacionados à segurança cibernética?",
+      "criteria": {
+        "0": "A direção não participa de decisões de segurança cibernética.",
+        "1": "A direção é envolvida apenas quando ocorre um problema grave ou quando a TI solicita algo pontual.",
+        "2": "A direção participa de parte das decisões e aprova algumas prioridades, mas sem acompanhamento regular.",
+        "3": "A direção participa regularmente das decisões de risco, prioridades e investimentos e acompanha os principais temas de segurança."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-01",
+          "GV.OV-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "atas, aprovações, orçamento, decisões documentadas ou evidência de participação gerencial",
+      "relatedQuestionIds": [
+        1,
+        6,
+        9
+      ]
+    },
+    {
+      "id": 9,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "As prioridades de segurança cibernética possuem recursos humanos, técnicos e/ou financeiros definidos de forma compatível com os riscos e a criticidade dos serviços?",
+      "criteria": {
+        "0": "Não há recursos direcionados às prioridades de segurança.",
+        "1": "Recursos são disponibilizados apenas de forma reativa e pontual, quando surge uma necessidade.",
+        "2": "Há pessoas, ferramentas ou orçamento para parte das prioridades, mas existem lacunas relevantes ou ausência de planejamento.",
+        "3": "Recursos humanos, técnicos e/ou financeiros são planejados e direcionados de forma compatível com riscos e criticidade dos serviços."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "orçamento, contratos, equipe, ferramentas, planos de investimento",
+      "relatedQuestionIds": [
+        8,
+        16,
+        23
+      ]
+    },
+    {
+      "id": 10,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "Antes da contratação de fornecedores críticos, são avaliados requisitos de segurança da informação, proteção de dados e continuidade do serviço?",
+      "criteria": {
+        "0": "Segurança, proteção de dados e continuidade não são considerados antes de contratar fornecedores críticos.",
+        "1": "A avaliação ocorre informalmente ou apenas para alguns fornecedores, dependendo de quem conduz a contratação.",
+        "2": "Há verificação de requisitos para fornecedores críticos, mas sem critérios consistentes, registro ou cobertura completa.",
+        "3": "Fornecedores críticos passam por avaliação definida de segurança, proteção de dados e continuidade antes da contratação."
+      },
+      "references": {
+        "nist": [
+          "GV.SC-06",
+          "ID.RA-10"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.3 — Gerenciamento de contratos"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F11",
+          "F03"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "checklist de homologação, due diligence, requisitos em proposta/contrato, avaliação de risco",
+      "relatedQuestionIds": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": 11,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "Os contratos com fornecedores e prestadores relevantes incluem, quando aplicável, cláusulas de confidencialidade, segurança, proteção de dados, comunicação de incidentes e requisitos de continuidade ou encerramento seguro do serviço?",
+      "criteria": {
+        "0": "Contratos relevantes não incluem cláusulas de segurança/proteção de dados pertinentes.",
+        "1": "Alguns contratos possuem cláusulas genéricas de confidencialidade, mas sem cobertura adequada de segurança, incidentes ou continuidade.",
+        "2": "A maioria dos contratos relevantes contempla os principais requisitos, porém há contratos antigos, lacunas ou ausência de revisão.",
+        "3": "Contratos relevantes contemplam, quando aplicável, confidencialidade, segurança, proteção de dados, incidentes, continuidade e encerramento seguro."
+      },
+      "references": {
+        "nist": [
+          "GV.SC-05"
+        ],
+        "lgpd": [
+          "LGPD arts. 39, 46 e 48, quando o fornecedor participar do tratamento de dados pessoais"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.3 — Gerenciamento de contratos"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F04",
+          "F09"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "contratos, aditivos, termos de confidencialidade e cláusulas de incidente",
+      "relatedQuestionIds": [
+        10,
+        12,
+        76
+      ]
+    },
+    {
+      "id": 12,
+      "dimensionId": "D01",
+      "dimension": "Governança, risco e terceiros",
+      "question": "Os riscos e os acessos de terceiros são revisados durante a prestação do serviço e tratados ou revogados quando houver mudança ou encerramento da relação contratual?",
+      "criteria": {
+        "0": "Acessos e riscos de terceiros não são revistos durante nem ao fim da prestação do serviço.",
+        "1": "A revisão/revogação depende de ações manuais e ocorre apenas quando alguém lembra ou quando há problema.",
+        "2": "Há processo de revisão ou encerramento para parte dos terceiros, mas com cobertura ou evidências incompletas.",
+        "3": "Acessos e riscos de terceiros são revistos durante a relação e tratados/revogados de forma controlada em mudanças e encerramentos."
+      },
+      "references": {
+        "nist": [
+          "GV.SC-07",
+          "GV.SC-10",
+          "PR.AA-05"
+        ],
+        "lgpd": [
+          "LGPD art. 46, quando terceiros tiverem acesso a dados pessoais"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.3 — Gerenciamento de contratos"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F08",
+          "F10",
+          "A02",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Barnes & Daim",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Jalali et al."
+        ]
+      },
+      "expectedEvidence": "revisões de acesso, avaliações periódicas, encerramento de contas, checklist de término contratual",
+      "relatedQuestionIds": [
+        11,
+        28,
+        89
+      ]
+    },
+    {
+      "id": 13,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Existe inventário atualizado dos equipamentos, dispositivos, servidores e demais ativos tecnológicos, incluindo equipamentos médicos conectados à rede quando aplicável?",
+      "criteria": {
+        "0": "Não existe inventário confiável dos ativos tecnológicos relevantes.",
+        "1": "Existe uma lista parcial ou informal, desatualizada ou restrita a alguns tipos de equipamento.",
+        "2": "O inventário cobre a maior parte dos ativos, inclusive equipamentos médicos conectados quando aplicável, mas há lacunas de atualização ou atributos.",
+        "3": "O inventário é atualizado, cobre os ativos relevantes e permite identificar equipamentos, servidores, dispositivos e equipamentos médicos conectados quando aplicável."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "inventário, CMDB, planilha, ferramenta de gestão ou relatório automatizado",
+      "relatedQuestionIds": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": 14,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Existe inventário atualizado dos softwares, sistemas, serviços em nuvem e integrações utilizados pela organização?",
+      "criteria": {
+        "0": "Não existe inventário dos softwares, sistemas, serviços em nuvem e integrações relevantes.",
+        "1": "Há conhecimento informal ou listas parciais, sem consolidação ou atualização.",
+        "2": "A maior parte dos sistemas/serviços está inventariada, mas há lacunas em nuvem, integrações, versões ou responsáveis.",
+        "3": "O inventário atualizado cobre softwares, sistemas, serviços em nuvem e integrações relevantes, com informações suficientes para gestão."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-02",
+          "ID.AM-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "inventário de software, contratos/licenças, lista de SaaS/nuvem e integrações",
+      "relatedQuestionIds": [
+        15,
+        19,
+        91
+      ]
+    },
+    {
+      "id": 15,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Os ativos e sistemas possuem responsáveis definidos por sua administração, manutenção e proteção?",
+      "criteria": {
+        "0": "Ativos e sistemas não possuem responsáveis definidos.",
+        "1": "A responsabilidade é assumida informalmente por quem utiliza ou mantém o recurso.",
+        "2": "A maior parte dos ativos/sistemas críticos possui responsável, mas há lacunas de formalização ou cobertura.",
+        "3": "Ativos e sistemas relevantes possuem responsáveis definidos por administração, manutenção e proteção."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "matriz de responsáveis, contratos de suporte, responsáveis técnicos/administrativos",
+      "relatedQuestionIds": [
+        13,
+        14,
+        2
+      ]
+    },
+    {
+      "id": 16,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Os ativos e sistemas são classificados conforme sua criticidade para o atendimento, a operação e a proteção de dados?",
+      "criteria": {
+        "0": "Ativos e sistemas não são diferenciados por criticidade.",
+        "1": "Existe percepção informal do que é crítico, sem critérios ou registro.",
+        "2": "Os principais sistemas/ativos críticos estão identificados, mas a classificação é incompleta ou pouco usada nas decisões.",
+        "3": "Há critérios e classificação de criticidade aplicados aos ativos/sistemas relevantes e usados para priorizar proteção e recuperação."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-05"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "classificação de criticidade, BIA, matriz de impacto, prioridades de recuperação",
+      "relatedQuestionIds": [
+        13,
+        14,
+        78
+      ]
+    },
+    {
+      "id": 17,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Os tipos de dados pessoais e dados pessoais sensíveis tratados pela organização estão identificados?",
+      "criteria": {
+        "0": "Os tipos de dados pessoais e sensíveis tratados não estão identificados.",
+        "1": "As equipes conhecem informalmente alguns dados tratados, mas sem registro consolidado.",
+        "2": "Os principais tipos de dados estão identificados, porém faltam áreas, sistemas, categorias ou atualização.",
+        "3": "Os principais tipos de dados pessoais e sensíveis tratados estão identificados e mantidos em registro utilizável."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-07"
+        ],
+        "lgpd": [
+          "LGPD arts. 5º, I-II, e 37"
+        ],
+        "anpd": [
+          "ANPD — Formulário Modelo de Registro das Operações de Tratamento de Dados Pessoais para Agentes de Tratamento de Pequeno Porte (ATPP)"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F07",
+          "F08"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "inventário de dados, registro de operações, mapa de dados",
+      "relatedQuestionIds": [
+        18,
+        36,
+        46
+      ]
+    },
+    {
+      "id": 18,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Os principais fluxos de dados dos pacientes, desde a coleta até armazenamento, compartilhamento, arquivamento e descarte, estão identificados ou mapeados?",
+      "criteria": {
+        "0": "Os principais fluxos de dados de pacientes não estão identificados.",
+        "1": "O fluxo é conhecido apenas pela experiência das equipes, sem mapeamento ou registro.",
+        "2": "Há mapeamento de etapas/sistemas principais, mas faltam compartilhamentos, armazenamento, arquivamento, descarte ou atualização.",
+        "3": "Os principais fluxos estão mapeados da coleta ao armazenamento/compartilhamento/arquivamento/descarte e são atualizados quando necessário."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-03",
+          "ID.AM-07"
+        ],
+        "lgpd": [
+          "LGPD art. 37"
+        ],
+        "anpd": [
+          "ANPD — Formulário Modelo de Registro das Operações de Tratamento de Dados Pessoais para Agentes de Tratamento de Pequeno Porte (ATPP)"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F07",
+          "F08"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "diagramas, mapa de fluxo, registro de tratamento, documentação de integrações",
+      "relatedQuestionIds": [
+        17,
+        44,
+        46
+      ]
+    },
+    {
+      "id": 19,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "As principais dependências entre processos assistenciais, sistemas, infraestrutura, fornecedores e links de comunicação críticos estão identificadas ou documentadas?",
+      "criteria": {
+        "0": "As dependências críticas entre processos, sistemas, infraestrutura, fornecedores e links não estão identificadas.",
+        "1": "Algumas dependências são conhecidas informalmente por técnicos/gestores.",
+        "2": "As principais dependências estão registradas, mas faltam componentes, fornecedores, links ou atualização.",
+        "3": "Dependências críticas estão identificadas/documentadas e são consideradas em risco, continuidade e mudanças."
+      },
+      "references": {
+        "nist": [
+          "GV.OC-04",
+          "GV.OC-05",
+          "ID.AM-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F04",
+          "F09"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "mapa de dependências, BIA, diagramas, contratos e planos de contingência",
+      "relatedQuestionIds": [
+        16,
+        82,
+        91
+      ]
+    },
+    {
+      "id": 20,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Existe diagrama ou documentação atualizada da rede e das principais conexões entre sistemas e unidades?",
+      "criteria": {
+        "0": "Não existe documentação útil da rede e das principais conexões entre sistemas/unidades.",
+        "1": "Existe documentação parcial, desatualizada ou mantida apenas por conhecimento da equipe.",
+        "2": "Há diagrama/documentação da maior parte do ambiente, mas faltam detalhes relevantes ou atualização.",
+        "3": "A rede e as principais conexões/integrações estão documentadas de forma atualizada e utilizável pela equipe responsável."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "diagrama lógico/físico, documentação de VLANs, links e integrações",
+      "relatedQuestionIds": [
+        52,
+        88
+      ]
+    },
+    {
+      "id": 21,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Existe processo para identificar, registrar e acompanhar vulnerabilidades, configurações inadequadas e exposições em ativos e sistemas, utilizando avaliações técnicas ou varreduras quando viável e compatível com o risco?",
+      "criteria": {
+        "0": "Não existe processo para identificar vulnerabilidades, configurações inadequadas e exposições.",
+        "1": "Problemas são identificados apenas por incidentes, alertas isolados ou verificações ocasionais.",
+        "2": "Há verificações periódicas ou ferramentas para parte do ambiente, mas com cobertura, priorização, registro ou tratamento incompletos.",
+        "3": "Existe processo contínuo/proporcional para identificar, registrar, priorizar e acompanhar vulnerabilidades, usando avaliações técnicas/varreduras quando viável."
+      },
+      "references": {
+        "nist": [
+          "ID.RA-01"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.4 — Gerenciamento de vulnerabilidades"
+        ],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F03",
+          "A06",
+          "A07",
+          "F06",
+          "A03"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "varreduras, relatórios, alertas de fabricante, avaliações técnicas, registros de correção",
+      "relatedQuestionIds": [
+        48,
+        49,
+        53
+      ]
+    },
+    {
+      "id": 22,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Existe procedimento para aquisição, instalação ou alteração, transferência, substituição e descarte seguro de ativos tecnológicos, com autorização e registro das mudanças relevantes?",
+      "criteria": {
+        "0": "Não há procedimento de segurança para aquisição, mudança, transferência, substituição e descarte de ativos.",
+        "1": "Algumas etapas são controladas informalmente, sem padrão ou registro consistente.",
+        "2": "Existe procedimento para boa parte do ciclo, mas faltam etapas, autorizações, registros ou descarte seguro em alguns casos.",
+        "3": "O ciclo de vida do ativo possui procedimentos definidos, autorizações/registros de mudanças relevantes e descarte seguro."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-08",
+          "ID.RA-07"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F07",
+          "F08"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "procedimento de ciclo de vida, termos de entrega/devolução, descarte sanitizado",
+      "relatedQuestionIds": [
+        13,
+        48,
+        49
+      ]
+    },
+    {
+      "id": 23,
+      "dimensionId": "D02",
+      "dimension": "Ativos, dados, processos e riscos",
+      "question": "Os riscos identificados são registrados, priorizados e acompanhados até seu tratamento ou aceitação formal?",
+      "criteria": {
+        "0": "Riscos identificados não são registrados nem acompanhados.",
+        "1": "Alguns riscos são lembrados e tratados informalmente, sem registro ou prazo.",
+        "2": "Há registro e priorização de parte dos riscos, mas faltam responsáveis, prazos, tratamento ou aceitação formal.",
+        "3": "Riscos são registrados, priorizados, atribuídos e acompanhados até tratamento ou aceitação formal."
+      },
+      "references": {
+        "nist": [
+          "ID.RA-06",
+          "GV.RM-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F02",
+          "F10",
+          "F11",
+          "A02",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "PPSI",
+          "Barnes & Daim"
+        ]
+      },
+      "expectedEvidence": "registro de riscos, plano de ação, responsáveis, prazos e aceite formal",
+      "relatedQuestionIds": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": 24,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "Os colaboradores e prestadores utilizam contas individuais e identificáveis para acessar sistemas e recursos tecnológicos?",
+      "criteria": {
+        "0": "Usuários e prestadores utilizam contas compartilhadas ou não identificáveis como prática normal.",
+        "1": "Há contas individuais em alguns sistemas, mas contas compartilhadas ainda são comuns ou inevitáveis sem controle.",
+        "2": "A maioria dos acessos utiliza contas individuais, com algumas exceções controladas ou sistemas legados.",
+        "3": "Contas individuais e identificáveis são o padrão nos sistemas aplicáveis, com exceções formalmente controladas."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-01"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06",
+          "F03",
+          "A02"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "listas de usuários, diretório, relatórios de contas, política de identidade",
+      "relatedQuestionIds": [
+        25,
+        27,
+        28
+      ]
+    },
+    {
+      "id": 25,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "As contas compartilhadas ou genéricas são evitadas ou, quando indispensáveis, possuem uso controlado e rastreável?",
+      "criteria": {
+        "0": "Contas genéricas/compartilhadas são usadas sem controle ou rastreabilidade.",
+        "1": "Há tentativa de limitar o uso, mas credenciais são compartilhadas e não há registro confiável de quem utilizou.",
+        "2": "Contas compartilhadas são exceção e possuem algum controle, mas a rastreabilidade ou revisão ainda é incompleta.",
+        "3": "Contas compartilhadas são evitadas; quando indispensáveis, têm justificativa, acesso restrito e rastreabilidade compatível."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-01",
+          "PR.AA-05"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06",
+          "F07",
+          "A12"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "inventário de contas genéricas, justificativas, logs e controles de custódia",
+      "relatedQuestionIds": [
+        24,
+        59
+      ]
+    },
+    {
+      "id": 26,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "Os acessos são concedidos de acordo com a função e limitados ao mínimo necessário para a atividade do usuário?",
+      "criteria": {
+        "0": "Acessos são concedidos sem relação clara com função ou necessidade.",
+        "1": "Existem perfis básicos, mas é comum conceder acesso amplo por conveniência.",
+        "2": "A maior parte dos acessos segue função/mínimo necessário, porém há exceções ou revisões incompletas.",
+        "3": "Acesso é baseado em função/necessidade, limitado ao mínimo necessário e aplicado de forma consistente."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-05"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "perfis, grupos, matriz de acesso, solicitações e aprovações",
+      "relatedQuestionIds": [
+        27,
+        29,
+        56
+      ]
+    },
+    {
+      "id": 27,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "A criação e a alteração de contas e permissões dependem de solicitação e autorização definidas?",
+      "criteria": {
+        "0": "Criação/alteração de contas e permissões ocorre sem solicitação/autorização definida.",
+        "1": "Há autorização informal por mensagem ou contato direto, sem fluxo padronizado.",
+        "2": "Existe fluxo para a maior parte dos sistemas, mas faltam registros, aprovadores claros ou cobertura de algumas plataformas.",
+        "3": "Criação e alteração de acessos seguem solicitação e autorização definidas, com registro suficiente."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-01",
+          "PR.AA-05"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "chamados, formulários, aprovações, workflow ou registros de alteração",
+      "relatedQuestionIds": [
+        26,
+        28
+      ]
+    },
+    {
+      "id": 28,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "Os acessos são revogados ou ajustados tempestivamente em desligamentos, afastamentos e mudanças de função?",
+      "criteria": {
+        "0": "Acessos não são revogados/ajustados de forma confiável em desligamentos, afastamentos ou mudança de função.",
+        "1": "A revogação ocorre manualmente e depende de aviso informal, podendo atrasar.",
+        "2": "Há processo definido, mas existem atrasos, sistemas fora do fluxo ou falhas de integração/comunicação.",
+        "3": "Mudanças de vínculo/função disparam ajuste ou revogação tempestiva dos acessos relevantes, com conferência/registro."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-01",
+          "PR.AA-05",
+          "GV.RR-04"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "checklist de desligamento, chamados, bloqueios, integração RH/TI",
+      "relatedQuestionIds": [
+        27,
+        29,
+        12
+      ]
+    },
+    {
+      "id": 29,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "As contas e permissões dos usuários são revisadas periodicamente para identificar acessos desnecessários ou excessivos?",
+      "criteria": {
+        "0": "Não há revisão periódica de contas e permissões.",
+        "1": "Revisões ocorrem apenas quando há problema, auditoria ou solicitação específica.",
+        "2": "Há revisão de sistemas críticos ou de parte dos usuários, mas sem cobertura/frequência consistente.",
+        "3": "Contas e permissões são revisadas periodicamente no escopo aplicável, e excessos/inativos são corrigidos."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-05"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "relatórios de recertificação, atas, planilhas de revisão e remoções",
+      "relatedQuestionIds": [
+        26,
+        28,
+        86
+      ]
+    },
+    {
+      "id": 30,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "As contas administrativas são separadas das contas de uso cotidiano e possuem controles adicionais?",
+      "criteria": {
+        "0": "Contas administrativas são usadas também para tarefas cotidianas e sem controles adicionais.",
+        "1": "Alguns administradores possuem conta separada, mas a prática não é consistente.",
+        "2": "A separação é adotada na maior parte do ambiente, porém faltam controles adicionais, revisão ou cobertura de alguns sistemas.",
+        "3": "Contas administrativas são separadas do uso cotidiano, restritas, protegidas e monitoradas de forma compatível com o risco."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-05"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "contas admin separadas, grupos privilegiados, logs, restrições e procedimentos",
+      "relatedQuestionIds": [
+        31,
+        56,
+        59
+      ]
+    },
+    {
+      "id": 31,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "A autenticação multifator é utilizada em acessos remotos, contas administrativas e sistemas críticos, quando tecnicamente possível?",
+      "criteria": {
+        "0": "MFA não é utilizado nos acessos aplicáveis.",
+        "1": "MFA existe apenas em poucos serviços/usuários, sem priorizar adequadamente acessos remotos, administrativos ou críticos.",
+        "2": "MFA cobre a maior parte dos acessos de maior risco, mas ainda há exceções relevantes ou limitações técnicas não tratadas.",
+        "3": "MFA é aplicado aos acessos remotos, administrativos e sistemas críticos quando suportado, com exceções justificadas/compensadas."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-03"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ],
+        "other": [
+          "NIST SP 800-63B-4 — Digital Identity Guidelines: Authentication and Authenticator Management"
+        ]
+      },
+      "expectedEvidence": "configuração de MFA, relatórios de cobertura, política e exceções documentadas",
+      "relatedQuestionIds": [
+        30,
+        54,
+        89
+      ]
+    },
+    {
+      "id": 32,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "Existem requisitos de autenticação por senha ou frase-senha que tratem de comprimento, proteção, reutilização e proibição de compartilhamento, prevendo alteração quando houver suspeita de comprometimento ou necessidade definida?",
+      "criteria": {
+        "0": "Não existem requisitos definidos para senhas/frases-senha ou compartilhamento de credenciais.",
+        "1": "Há regras básicas, mas inconsistentes entre sistemas ou conhecidas apenas informalmente.",
+        "2": "Requisitos estão definidos e aplicados na maior parte do ambiente, mas há sistemas/exceções ou orientação incompletos.",
+        "3": "Requisitos de autenticação tratam comprimento/proteção/reutilização/compartilhamento e troca quando houver comprometimento/necessidade definida."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-01",
+          "PR.AA-03"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06",
+          "F03",
+          "F04"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "política de senha/credenciais, GPO/configurações, processo de reset e gestão de padrão",
+      "relatedQuestionIds": [
+        31,
+        33
+      ]
+    },
+    {
+      "id": 33,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "Existem controles de bloqueio por tentativas incorretas, encerramento de sessão e bloqueio de tela por inatividade?",
+      "criteria": {
+        "0": "Não há controles de bloqueio por tentativas, sessão ou inatividade onde tecnicamente disponíveis.",
+        "1": "Alguns sistemas possuem configurações padrão, sem padronização ou análise de risco.",
+        "2": "A maior parte dos sistemas relevantes possui controles, mas há lacunas em parâmetros, cobertura ou sistemas legados.",
+        "3": "Controles de tentativas, sessão e inatividade estão configurados de forma adequada nos sistemas aplicáveis e revistos quando necessário."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-03"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "GPO, políticas de sistema, configuração de aplicativos e evidência de aplicação",
+      "relatedQuestionIds": [
+        32,
+        24
+      ]
+    },
+    {
+      "id": 34,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "Os colaboradores recebem orientação inicial e treinamento periódico sobre segurança da informação, privacidade e uso adequado dos recursos?",
+      "criteria": {
+        "0": "Não há orientação inicial nem treinamento periódico sobre segurança e privacidade.",
+        "1": "Há orientações pontuais, geralmente informais ou apenas quando ocorre problema.",
+        "2": "Existe treinamento/orientação para parte das pessoas ou em periodicidade irregular, com cobertura incompleta.",
+        "3": "Há orientação inicial e ações periódicas de conscientização/treinamento para públicos relevantes, com registro ou evidência."
+      },
+      "references": {
+        "nist": [
+          "PR.AT-01"
+        ],
+        "lgpd": [
+          "LGPD art. 50"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.2 — Conscientização e treinamento"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06",
+          "A02"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "listas de presença, conteúdo, cronograma, onboarding e campanhas",
+      "relatedQuestionIds": [
+        35,
+        70
+      ]
+    },
+    {
+      "id": 35,
+      "dimensionId": "D03",
+      "dimension": "Identidades, acessos e fator humano",
+      "question": "Os usuários são orientados a reconhecer e comunicar phishing, engenharia social, perda de dispositivos e outros eventos suspeitos?",
+      "criteria": {
+        "0": "Usuários não recebem orientação sobre phishing, engenharia social e comunicação de eventos suspeitos.",
+        "1": "A orientação é ocasional e informal, sem canal/processo claro de comunicação.",
+        "2": "A maioria dos usuários recebe orientação, mas faltam periodicidade, cobertura ou reforço do canal de comunicação.",
+        "3": "Usuários são orientados periodicamente a reconhecer e comunicar phishing, engenharia social, perda de dispositivo e eventos suspeitos."
+      },
+      "references": {
+        "nist": [
+          "PR.AT-01"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.2 — Conscientização e treinamento"
+        ],
+        "bibliography": [
+          "F01",
+          "F08",
+          "F11",
+          "A03",
+          "A06",
+          "F04",
+          "F09"
+        ],
+        "stateOfArt": [
+          "Blanke & McGrady",
+          "SRA Tool",
+          "RISC 2.0",
+          "SISP",
+          "Chen & Wald",
+          "Nguyen et al."
+        ]
+      },
+      "expectedEvidence": "treinamentos, campanhas, simulações, comunicados e canal de reporte",
+      "relatedQuestionIds": [
+        34,
+        70,
+        66
+      ]
+    },
+    {
+      "id": 36,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "As finalidades e as bases legais das principais operações de tratamento de dados pessoais e dados pessoais sensíveis estão identificadas?",
+      "criteria": {
+        "0": "Finalidades e bases legais das principais operações de tratamento não estão identificadas.",
+        "1": "Há entendimento informal de algumas finalidades/bases, sem registro estruturado.",
+        "2": "As principais operações estão mapeadas, mas faltam sistemas, finalidades, bases, responsáveis ou atualização.",
+        "3": "Finalidades e bases legais das principais operações com dados pessoais/sensíveis estão identificadas e mantidas atualizadas."
+      },
+      "references": {
+        "nist": [
+          "GV.OC-03",
+          "ID.AM-07"
+        ],
+        "lgpd": [
+          "LGPD arts. 7º, 11 e 37"
+        ],
+        "anpd": [
+          "ANPD — Formulário Modelo de Registro das Operações de Tratamento de Dados Pessoais para Agentes de Tratamento de Pequeno Porte (ATPP)"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "registro de operações, inventário de tratamento, documentos jurídicos",
+      "relatedQuestionIds": [
+        17,
+        37,
+        46
+      ]
+    },
+    {
+      "id": 37,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "A organização limita a coleta e o tratamento de dados ao necessário para as finalidades assistenciais, administrativas e legais?",
+      "criteria": {
+        "0": "São coletados/tratados dados além do necessário sem análise de necessidade.",
+        "1": "Há preocupação informal com minimização, mas formulários/processos mantêm campos ou cópias desnecessárias.",
+        "2": "A minimização é aplicada na maior parte dos processos, mas existem exceções ou revisões pendentes.",
+        "3": "Coleta e tratamento são limitados ao necessário para finalidades definidas, com revisão de campos, cópias e compartilhamentos quando pertinente."
+      },
+      "references": {
+        "nist": [
+          "GV.OC-03"
+        ],
+        "lgpd": [
+          "LGPD art. 6º, III — princípio da necessidade"
+        ],
+        "anpd": [],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "formulários, campos de sistemas, políticas, revisão de dados coletados",
+      "relatedQuestionIds": [
+        36,
+        44,
+        92
+      ]
+    },
+    {
+      "id": 38,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "As responsabilidades relacionadas ao tratamento de dados pessoais - incluindo os papéis de controlador e operador - estão definidas e comunicadas, e a organização mantém encarregado quando aplicável ou canal de comunicação com titulares e com a ANPD quando houver dispensa válida, conforme a regulamentação?",
+      "criteria": {
+        "0": "Os papéis de controlador e operador não estão identificados de forma suficiente e não há tratamento adequado da exigência de encarregado ou, quando houver dispensa válida, do canal de comunicação com titulares e com a ANPD.",
+        "1": "Há entendimento informal de alguns papéis e um meio de contato pode existir, mas faltam documentação, comunicação clara, análise das relações com terceiros ou definição de como a organização atende às regras sobre encarregado/canal.",
+        "2": "Os principais papéis estão definidos e documentados e existe encarregado quando aplicável ou canal de comunicação com titulares e com a ANPD quando houver dispensa válida, porém ainda há lacunas em terceiros, atribuições, divulgação, atualização ou comprovação do enquadramento adotado.",
+        "3": "Os papéis de controlador e operador nas principais operações estão definidos, documentados e comunicados; quando a indicação de encarregado for aplicável, ela é formalizada e divulgada conforme a regulamentação, e quando houver dispensa válida para agente de pequeno porte, existe canal de comunicação com titulares e com a ANPD e a decisão é documentada."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-02",
+          "GV.OC-03"
+        ],
+        "lgpd": [
+          "LGPD arts. 5º, VI-VIII, 39 e 41"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo para Definições dos Agentes de Tratamento de Dados Pessoais e do Encarregado (v2.0, 2022)",
+          "ANPD — Resolução CD/ANPD nº 18/2024 — Regulamento sobre a atuação do encarregado pelo tratamento de dados pessoais; art. 3º, § 1º prevê canal com titulares e com a ANPD para agentes de pequeno porte dispensados de encarregado",
+          "ANPD — Resolução CD/ANPD nº 2/2022, art. 11 — dispensa de encarregado para agentes de tratamento de pequeno porte, observadas as condições do regulamento"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13",
+          "F04",
+          "A08"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "matriz de papéis, contratos/termos que caracterizem controlador e operador, ato e divulgação do encarregado quando aplicável ou registro do enquadramento/dispensa e evidência de canal de comunicação com titulares e com a ANPD quando houver dispensa válida",
+      "relatedQuestionIds": [
+        2,
+        46,
+        75
+      ]
+    },
+    {
+      "id": 39,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "Existem critérios ou prazos de retenção definidos para as principais categorias de cadastros, documentos, exames, imagens, laudos, logs e demais informações, considerando obrigações assistenciais, legais e contratuais, inclusive as regras aplicáveis ao prontuário do paciente?",
+      "criteria": {
+        "0": "Não existem critérios/prazos de retenção para as principais categorias de informação, nem identificação das obrigações específicas aplicáveis ao prontuário do paciente.",
+        "1": "A retenção ocorre por hábito, capacidade de armazenamento ou decisões pontuais, com conhecimento limitado ou não documentado das obrigações legais e assistenciais.",
+        "2": "Há prazos/critério para parte dos dados e alguma consideração das obrigações aplicáveis ao prontuário, mas faltam categorias, base assistencial/legal/contratual, exceções ou aplicação consistente.",
+        "3": "Critérios/prazos estão definidos e aplicados para as principais categorias, com base assistencial, legal e contratual documentada; quando a informação integra o prontuário do paciente, a temporalidade observa a Lei nº 13.787/2018 e demais regras específicas aplicáveis."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-08"
+        ],
+        "lgpd": [
+          "LGPD arts. 6º, III, 15 e 16"
+        ],
+        "anpd": [],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ],
+        "other": [
+          "Lei nº 13.787/2018, art. 6º — prazo mínimo de 20 anos a partir do último registro antes da possibilidade de eliminação do prontuário, observadas as condições e eventuais prazos diferenciados aplicáveis"
+        ]
+      },
+      "expectedEvidence": "tabela de temporalidade, política de retenção, requisitos assistenciais/regulatórios, referência à Lei nº 13.787/2018 para prontuários quando aplicável, configurações e registros de revisão/exceção",
+      "relatedQuestionIds": [
+        40,
+        46
+      ]
+    },
+    {
+      "id": 40,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "Existe procedimento seguro para descarte de documentos físicos, mídias, equipamentos e dados digitais?",
+      "criteria": {
+        "0": "Descarte de documentos, mídias, equipamentos e dados ocorre sem procedimento de segurança.",
+        "1": "Algumas equipes adotam cuidados informais, mas sem padrão ou controle de todas as mídias/dados.",
+        "2": "Existe procedimento para a maior parte dos casos, porém há lacunas de registro, fornecedores, mídias ou exclusão lógica.",
+        "3": "Existe procedimento definido para descarte seguro físico e digital, com tratamento adequado de mídias/equipamentos e registros quando necessários."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-08",
+          "PR.DS-01"
+        ],
+        "lgpd": [
+          "LGPD arts. 16 e 46"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.2 — Segurança dos dados pessoais armazenados"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "procedimento de descarte, certificados, sanitização, fragmentação e registros",
+      "relatedQuestionIds": [
+        39,
+        22,
+        55
+      ]
+    },
+    {
+      "id": 41,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "Os dados sensíveis em trânsito por redes internas, internet, VPN, portais e integrações recebem mecanismos de proteção compatíveis com o risco e com as capacidades dos sistemas envolvidos?",
+      "criteria": {
+        "0": "Dados sensíveis em trânsito não recebem proteção compatível com o risco.",
+        "1": "Há proteção em alguns canais (por exemplo VPN/HTTPS), mas persistem envios/integrações relevantes sem controle adequado.",
+        "2": "A maior parte dos canais relevantes é protegida, porém há exceções, sistemas legados ou configurações que precisam de tratamento.",
+        "3": "Redes, internet, VPN, portais e integrações usam mecanismos de proteção compatíveis com o risco e capacidade técnica, com exceções conhecidas/compensadas."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-02"
+        ],
+        "lgpd": [
+          "LGPD art. 46"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.3 — Segurança das comunicações"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "TLS/VPN, configurações de integração, segmentação, testes e documentação",
+      "relatedQuestionIds": [
+        43,
+        54,
+        88
+      ]
+    },
+    {
+      "id": 42,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "Os dados armazenados em servidores, estações, dispositivos móveis, mídias e serviços externos recebem controles de proteção compatíveis com o risco, como controle de acesso, configuração segura, proteção física e criptografia quando pertinente?",
+      "criteria": {
+        "0": "Dados armazenados não recebem controles de proteção proporcionais ao risco.",
+        "1": "Há controles básicos em parte do ambiente, mas dispositivos, mídias ou serviços externos ficam com proteção inconsistente.",
+        "2": "A maior parte dos repositórios relevantes possui controle de acesso/configuração/proteção, mas existem lacunas pontuais ou criptografia/controles adicionais não avaliados onde pertinentes.",
+        "3": "Servidores, estações, dispositivos, mídias e serviços externos recebem proteção proporcional ao risco, com controles documentados e revistos."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-01"
+        ],
+        "lgpd": [
+          "LGPD art. 46"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.2 — Segurança dos dados pessoais armazenados"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "criptografia quando cabível, ACLs, proteção de mídia, controles de nuvem e backup",
+      "relatedQuestionIds": [
+        47,
+        57,
+        80
+      ]
+    },
+    {
+      "id": 43,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "Existem regras formais para envio, exportação e compartilhamento de dados por e-mail, mensageria, mídia removível, portal ou outros meios?",
+      "criteria": {
+        "0": "Não existem regras para envio, exportação ou compartilhamento de dados pelos canais utilizados.",
+        "1": "Há orientação informal sobre alguns meios, mas usuários decidem caso a caso.",
+        "2": "Existem regras para os principais canais, porém faltam meios, públicos, autorizações ou fiscalização consistente.",
+        "3": "Regras formais cobrem os principais meios de envio/exportação/compartilhamento e definem condições, autorizações e restrições."
+      },
+      "references": {
+        "nist": [
+          "GV.PO-01",
+          "PR.DS-02"
+        ],
+        "lgpd": [
+          "LGPD arts. 6º, VII, e 46"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.3 — Segurança das comunicações"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "política/procedimento, termos de uso, controles de exportação, meios autorizados",
+      "relatedQuestionIds": [
+        41,
+        44,
+        90
+      ]
+    },
+    {
+      "id": 44,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "O compartilhamento de dados com médicos, convênios, hospitais, fornecedores e outros terceiros é autorizado, limitado à finalidade e rastreável quando necessário?",
+      "criteria": {
+        "0": "Compartilhamentos com terceiros ocorrem sem autorização/controle definido.",
+        "1": "Há validação informal de alguns compartilhamentos, mas sem registro ou critérios consistentes.",
+        "2": "A maioria dos compartilhamentos relevantes é autorizada e controlada, porém existem lacunas de registro, finalidade ou revisão.",
+        "3": "Compartilhamentos com médicos, convênios, hospitais, fornecedores e terceiros seguem autorização/necessidade definida e são registrados quando necessário."
+      },
+      "references": {
+        "nist": [
+          "GV.SC-05",
+          "PR.DS-02",
+          "GV.OC-03"
+        ],
+        "lgpd": [
+          "LGPD arts. 6º, I e III, 11 e 37"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.3 — Gerenciamento de contratos"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13",
+          "F11",
+          "F03"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "contratos, integrações, logs, autorizações, registros de tratamento",
+      "relatedQuestionIds": [
+        36,
+        43,
+        90
+      ]
+    },
+    {
+      "id": 45,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "Colaboradores e prestadores com acesso a dados sensíveis estão sujeitos a deveres de confidencialidade adequados ao vínculo e ao acesso?",
+      "criteria": {
+        "0": "Não existem deveres ou compromissos de confidencialidade aplicáveis aos colaboradores e prestadores com acesso a dados sensíveis.",
+        "1": "Há cláusulas ou compromissos apenas para parte dos vínculos ou de forma genérica, com cobertura inconsistente.",
+        "2": "A maioria dos públicos aplicáveis possui deveres de confidencialidade documentados, mas há lacunas de cobertura, atualização ou tratamento de terceiros.",
+        "3": "Deveres de confidencialidade estão formalizados para os públicos aplicáveis, coerentes com o vínculo e o acesso, e incorporados a contratos, termos, políticas ou instrumentos equivalentes."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-04",
+          "GV.SC-05"
+        ],
+        "lgpd": [
+          "LGPD arts. 46 e 47"
+        ],
+        "anpd": [],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13",
+          "F11",
+          "F03"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "termos ou cláusulas de confidencialidade, contratos, políticas e registros de aceite",
+      "relatedQuestionIds": [
+        11,
+        34
+      ]
+    },
+    {
+      "id": 46,
+      "dimensionId": "D04",
+      "dimension": "Proteção de dados, LGPD e compartilhamento",
+      "question": "A organização mantém registro das principais operações de tratamento de dados pessoais, incluindo sistemas, finalidades, compartilhamentos e responsáveis envolvidos?",
+      "criteria": {
+        "0": "Não existe registro das principais operações de tratamento de dados pessoais.",
+        "1": "Existem registros informais ou dispersos, incompletos ou desatualizados, sem visão consolidada das principais operações.",
+        "2": "Há registro das principais operações, mas faltam elementos relevantes como sistemas, categorias de dados, finalidades, compartilhamentos, agentes/responsáveis ou atualização.",
+        "3": "A organização mantém registro atualizado das principais operações de tratamento, com informações suficientes sobre processos/sistemas, categorias de dados, finalidades, compartilhamentos e agentes ou responsáveis envolvidos."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-07",
+          "GV.OC-03"
+        ],
+        "lgpd": [
+          "LGPD art. 37"
+        ],
+        "anpd": [
+          "ANPD — Formulário Modelo de Registro das Operações de Tratamento de Dados Pessoais para Agentes de Tratamento de Pequeno Porte (ATPP)"
+        ],
+        "bibliography": [
+          "F07",
+          "F08",
+          "F09",
+          "A12",
+          "A13",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "Paiva et al.",
+          "Hawryliszyn et al.",
+          "Aragão & Schiocchet",
+          "SISP",
+          "PPSI"
+        ]
+      },
+      "expectedEvidence": "ROPA/inventário de tratamento, mapa de dados e registros por processo ou sistema",
+      "relatedQuestionIds": [
+        17,
+        18,
+        36,
+        44
+      ]
+    },
+    {
+      "id": 47,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "Existem padrões mínimos de configuração segura (hardening) para servidores, estações, dispositivos móveis, equipamentos de rede e serviços, de forma proporcional ao risco e à capacidade técnica?",
+      "criteria": {
+        "0": "Não há padrões mínimos de configuração segura para os principais tipos de tecnologia.",
+        "1": "Configurações seguras dependem da experiência de cada técnico e variam entre equipamentos.",
+        "2": "Existem padrões/referências para parte relevante do ambiente, mas faltam cobertura, documentação, exceções ou revisão.",
+        "3": "Padrões proporcionais de hardening/configuração segura são definidos para tecnologias relevantes e aplicados/revistos quando necessário."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "baseline/hardening, GPO, modelos de configuração, checklist de implantação",
+      "relatedQuestionIds": [
+        48,
+        49,
+        53
+      ]
+    },
+    {
+      "id": 48,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "Sistemas operacionais, aplicativos, navegadores e componentes recebem atualizações e correções de segurança de forma controlada?",
+      "criteria": {
+        "0": "Atualizações e correções de segurança não são gerenciadas.",
+        "1": "Atualizações ocorrem de forma ocasional/manual, sem priorização ou acompanhamento.",
+        "2": "Há rotina para a maior parte dos sistemas, mas existem atrasos, ativos fora do processo ou falhas de teste/registro.",
+        "3": "Atualizações/correções são acompanhadas, priorizadas e aplicadas de forma controlada, com tratamento de exceções."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-02"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.4 — Gerenciamento de vulnerabilidades"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "patch management, WSUS/RMM, relatórios, cronograma e exceções",
+      "relatedQuestionIds": [
+        21,
+        49
+      ]
+    },
+    {
+      "id": 49,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "Sistemas e equipamentos sem suporte do fabricante são identificados e possuem medidas de compensação ou plano de substituição?",
+      "criteria": {
+        "0": "Sistemas/equipamentos sem suporte não são identificados.",
+        "1": "Alguns legados são conhecidos, mas sem registro, controle compensatório ou plano definido.",
+        "2": "Os principais itens sem suporte estão identificados e possuem alguma mitigação, mas faltam cobertura, prazo ou plano de substituição.",
+        "3": "Itens sem suporte são identificados, avaliados e possuem controles compensatórios e/ou plano de substituição compatível com o risco."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-02",
+          "PR.PS-03"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.4 — Gerenciamento de vulnerabilidades"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07",
+          "F08",
+          "A02"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "lista EOL/EOS, plano de substituição, segmentação e controles compensatórios",
+      "relatedQuestionIds": [
+        48,
+        53
+      ]
+    },
+    {
+      "id": 50,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "Estações e servidores possuem mecanismos atualizados de prevenção, detecção e/ou contenção de códigos maliciosos ou ameaças de endpoint, conforme aplicável?",
+      "criteria": {
+        "0": "Estações e servidores não possuem mecanismo de proteção contra malware/ameaças de endpoint onde aplicável.",
+        "1": "Há proteção em parte dos equipamentos, mas com cobertura, atualização ou gerenciamento inconsistentes.",
+        "2": "A maior parte dos endpoints/servidores relevantes está protegida, porém há exceções ou lacunas de monitoramento/atualização.",
+        "3": "Mecanismos aplicáveis de prevenção, detecção e/ou contenção estão ativos e atualizados no escopo pertinente, com cobertura e acompanhamento adequados."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-05",
+          "DE.CM-09"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021)"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07",
+          "F04",
+          "F09"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "antivírus/EDR, console, cobertura, política, alertas e atualização",
+      "relatedQuestionIds": [
+        64,
+        66
+      ]
+    },
+    {
+      "id": 51,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "Existe firewall ou mecanismo equivalente, com regras restritivas, documentadas e revisadas periodicamente?",
+      "criteria": {
+        "0": "Não existe firewall/mecanismo equivalente protegendo os limites ou segmentos relevantes.",
+        "1": "Existe firewall, mas regras são amplas, pouco documentadas ou raramente revisadas.",
+        "2": "Regras restritivas existem para a maior parte do ambiente, porém há exceções antigas, documentação ou revisão incompleta.",
+        "3": "Firewalls/mecanismos equivalentes possuem regras restritivas e justificadas, documentação suficiente e revisão periódica."
+      },
+      "references": {
+        "nist": [
+          "PR.IR-01"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.3 — Segurança das comunicações"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "firewall, regras, revisão, change log, política e relatórios",
+      "relatedQuestionIds": [
+        52,
+        54,
+        60
+      ]
+    },
+    {
+      "id": 52,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "A rede é segmentada conforme a finalidade, criticidade e nível de confiança dos ativos e usuários?",
+      "criteria": {
+        "0": "A rede não possui segmentação relevante por finalidade/criticidade/confiança.",
+        "1": "Existe separação básica, mas muitos ativos/usuários de perfis diferentes compartilham segmentos sem necessidade.",
+        "2": "Há segmentação dos principais grupos (por exemplo servidores, usuários, equipamentos, convidados), mas persistem exceções ou regras permissivas.",
+        "3": "A segmentação é planejada conforme finalidade, criticidade e confiança, com controles entre segmentos e revisão quando necessário."
+      },
+      "references": {
+        "nist": [
+          "PR.IR-01"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.3 — Segurança das comunicações"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07",
+          "F07",
+          "F08"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "VLANs, ACLs, zonas, diagramas, regras intersegmentos e testes",
+      "relatedQuestionIds": [
+        20,
+        53,
+        88
+      ]
+    },
+    {
+      "id": 53,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "Equipamentos médicos e sistemas legados com limitações de atualização ou suporte possuem análise de risco e controles compensatórios definidos, como isolamento, segmentação, restrição de acesso ou medidas acordadas com fornecedores quando necessário?",
+      "criteria": {
+        "0": "Legados/equipamentos médicos com limitações ficam expostos sem avaliação nem controle compensatório.",
+        "1": "As limitações são conhecidas e há alguma proteção informal, como cuidado operacional ou regra isolada.",
+        "2": "Os principais itens possuem isolamento/segmentação/restrição ou medidas com fornecedor, mas há cobertura/documentação incompleta.",
+        "3": "Limitações são avaliadas e controles compensatórios proporcionais são definidos, documentados e acompanhados, com exceções e riscos residuais conhecidos."
+      },
+      "references": {
+        "nist": [
+          "ID.RA-01",
+          "ID.RA-06",
+          "PR.IR-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07",
+          "F06",
+          "A03",
+          "F08"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "segmentação, ACLs, whitelist, restrição de internet, monitoramento e análise de risco",
+      "relatedQuestionIds": [
+        49,
+        52,
+        89
+      ]
+    },
+    {
+      "id": 54,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "O acesso remoto à infraestrutura e aos sistemas utiliza meios seguros e evita a exposição direta de serviços administrativos à internet?",
+      "criteria": {
+        "0": "Acesso remoto expõe serviços diretamente à internet ou utiliza meios sem proteção adequada.",
+        "1": "Há VPN/ferramenta remota em alguns casos, mas ainda existem acessos diretos, contas compartilhadas ou controles inconsistentes.",
+        "2": "A maior parte do acesso remoto usa meios seguros, porém há exceções, MFA ausente ou controles/revisões incompletos.",
+        "3": "Acesso remoto utiliza meios protegidos, contas identificáveis, MFA quando suportado e evita exposição direta de serviços administrativos."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-03",
+          "PR.AA-05",
+          "PR.IR-01"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso",
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.3 — Segurança das comunicações"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "VPN/ZTNA, MFA, regras de firewall, bastion/jump host, logs",
+      "relatedQuestionIds": [
+        31,
+        51,
+        89
+      ]
+    },
+    {
+      "id": 55,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "O uso de dispositivos removíveis e mídias externas é restrito, autorizado e monitorado conforme o risco?",
+      "criteria": {
+        "0": "Uso de mídias removíveis/dispositivos externos é irrestrito e sem controle.",
+        "1": "Há orientação para evitar o uso, mas sem autorização, bloqueio ou rastreabilidade consistente.",
+        "2": "Uso é limitado em parte do ambiente, mas existem exceções, equipamentos sem controle ou processo de autorização incompleto.",
+        "3": "Uso é restrito conforme risco, autorizado quando necessário e controlado/monitorado por medidas técnicas ou administrativas adequadas."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-01",
+          "PR.AA-05"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.2 — Segurança dos dados pessoais armazenados"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07",
+          "F06",
+          "A03"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "política USB, bloqueios, DLP/antimalware, autorização e logs",
+      "relatedQuestionIds": [
+        40,
+        43,
+        90
+      ]
+    },
+    {
+      "id": 56,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "O uso cotidiano é realizado sem privilégios administrativos desnecessários e existem controles para impedir alterações não autorizadas em estações e dispositivos?",
+      "criteria": {
+        "0": "Usuários utilizam privilégios administrativos locais sem necessidade e alterações não autorizadas não são restringidas.",
+        "1": "Algumas estações removem privilégios, mas a prática varia por usuário/equipamento.",
+        "2": "A maior parte do ambiente opera com privilégio mínimo, porém há exceções justificadas de forma incompleta ou controles inconsistentes.",
+        "3": "Privilégio administrativo é restrito ao necessário e alterações relevantes exigem autorização/credencial apropriada."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-05",
+          "PR.PS-01"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07",
+          "F08",
+          "A03"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "GPO, políticas MDM, grupos locais, UAC, kiosk/lockdown e evidências",
+      "relatedQuestionIds": [
+        26,
+        30
+      ]
+    },
+    {
+      "id": 57,
+      "dimensionId": "D05",
+      "dimension": "Infraestrutura, redes, sistemas e dispositivos",
+      "question": "Salas de servidores, racks, equipamentos de rede e mídias de backup possuem controle de acesso físico e proteção ambiental?",
+      "criteria": {
+        "0": "Áreas/equipamentos críticos e mídias de backup não possuem proteção física/ambiental adequada.",
+        "1": "Existem barreiras básicas, mas acesso, energia, temperatura, água/incêndio ou armazenamento de mídia têm lacunas relevantes.",
+        "2": "A maior parte das proteções está presente, porém existem melhorias pendentes de acesso, ambiente, energia ou registro.",
+        "3": "Salas, racks, rede e mídias críticas possuem controles físicos e ambientais proporcionais ao risco e são mantidos/monitorados."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-06",
+          "PR.IR-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F11",
+          "A06",
+          "A07",
+          "F04",
+          "A08"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Eichelberg et al.",
+          "SRA Tool",
+          "RISC 2.0"
+        ]
+      },
+      "expectedEvidence": "controle de acesso, chave/crachá, nobreak, climatização, sensores e registros",
+      "relatedQuestionIds": [
+        80,
+        84
+      ]
+    },
+    {
+      "id": 58,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "Os sistemas críticos geram registros de eventos suficientes para apoiar a identificação e a investigação de incidentes?",
+      "criteria": {
+        "0": "Sistemas críticos não geram logs úteis para identificar/investigar incidentes.",
+        "1": "Há logs padrão em alguns sistemas, mas insuficientes, desabilitados ou não acessíveis quando necessários.",
+        "2": "A maior parte dos sistemas críticos gera registros úteis, mas faltam fontes, eventos, retenção ou integração.",
+        "3": "Sistemas críticos geram e mantêm registros adequados ao risco para identificação e investigação de incidentes."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-04",
+          "DE.CM-09"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "F04",
+          "F09"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "configuração de logging, exemplos de logs e cobertura de sistemas críticos",
+      "relatedQuestionIds": [
+        59,
+        62,
+        63
+      ]
+    },
+    {
+      "id": 59,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "As ações relevantes de usuários e administradores, incluindo acessos e alterações, são registradas quando tecnicamente possível?",
+      "criteria": {
+        "0": "Ações relevantes de usuários/administradores não são registradas onde tecnicamente possível.",
+        "1": "Alguns sistemas registram login, mas alterações/ações administrativas ou eventos sensíveis têm pouca rastreabilidade.",
+        "2": "A maioria dos sistemas relevantes registra ações importantes, porém há lacunas de eventos, usuários ou revisão.",
+        "3": "Ações relevantes, inclusive administrativas, são registradas no escopo suportado e permitem rastreabilidade suficiente."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-04",
+          "DE.CM-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "logs de autenticação, alterações, administração, consultas/exportações",
+      "relatedQuestionIds": [
+        58,
+        30,
+        87
+      ]
+    },
+    {
+      "id": 60,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "Firewall, VPN, serviços de acesso remoto e equipamentos de rede mantêm registros compatíveis com os riscos do ambiente?",
+      "criteria": {
+        "0": "Firewall, VPN, acesso remoto e rede não mantêm registros úteis.",
+        "1": "Alguns equipamentos mantêm logs locais, mas com retenção curta, acesso difícil ou configuração inconsistente.",
+        "2": "As principais fontes mantêm logs, porém há lacunas de retenção, cobertura, centralização ou revisão.",
+        "3": "Registros das principais fontes de rede/acesso remoto são mantidos de forma compatível com risco e disponíveis para análise."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-04",
+          "DE.CM-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "logs de firewall/VPN, retenção, alertas, disponibilidade e revisão",
+      "relatedQuestionIds": [
+        51,
+        54,
+        63
+      ]
+    },
+    {
+      "id": 61,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "Os sistemas e equipamentos utilizam referência de data e hora sincronizada para permitir correlação confiável dos eventos?",
+      "criteria": {
+        "0": "Sistemas/equipamentos usam horários inconsistentes, impedindo correlação confiável.",
+        "1": "Parte do ambiente usa sincronização automática, mas há equipamentos/sistemas relevantes fora do padrão.",
+        "2": "A maioria está sincronizada, porém existem fontes legadas ou configurações não monitoradas.",
+        "3": "Fontes relevantes utilizam referência de data/hora sincronizada e desvios importantes são tratados."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-04",
+          "DE.AE-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "NTP/serviço de horário, configuração centralizada e validação",
+      "relatedQuestionIds": [
+        58,
+        73
+      ]
+    },
+    {
+      "id": 62,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "Os logs são protegidos contra alteração e exclusão indevidas e mantidos pelo período definido pela organização?",
+      "criteria": {
+        "0": "Logs podem ser alterados/excluídos livremente e não há retenção definida.",
+        "1": "Há permissões básicas ou cópias de alguns logs, mas sem proteção/retenção consistente.",
+        "2": "A maioria dos logs relevantes possui proteção e retenção, porém há lacunas de privilégio, destino, período ou cobertura.",
+        "3": "Logs relevantes têm acesso restrito/proteção contra alteração indevida e retenção definida conforme necessidade e risco."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-04",
+          "PR.DS-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "ACLs, centralização, retenção, WORM/imutabilidade quando aplicável",
+      "relatedQuestionIds": [
+        58,
+        63,
+        73
+      ]
+    },
+    {
+      "id": 63,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "Os registros e alertas de segurança são revisados com frequência compatível com a criticidade dos serviços?",
+      "criteria": {
+        "0": "Registros e alertas de segurança não são revisados.",
+        "1": "São consultados apenas após problema ou quando alguém recebe um alerta específico.",
+        "2": "Há revisão de fontes críticas ou alertas importantes, mas sem frequência/cobertura definida.",
+        "3": "Logs/alertas relevantes são revisados em frequência compatível com a criticidade, com encaminhamento de achados."
+      },
+      "references": {
+        "nist": [
+          "DE.CM-09",
+          "DE.AE-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "rotina de revisão, SOC/MSP, relatórios, tickets e evidências de análise",
+      "relatedQuestionIds": [
+        58,
+        64,
+        66
+      ]
+    },
+    {
+      "id": 64,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "Existem alertas automáticos, quando suportados pelos sistemas, para eventos relevantes como tentativas de acesso, malware, indisponibilidade e falhas de backup?",
+      "criteria": {
+        "0": "Não existem alertas automáticos para eventos relevantes mesmo onde os sistemas suportam.",
+        "1": "Existem alertas isolados, sem cobertura das principais situações ou sem responsável claro.",
+        "2": "Há alertas para boa parte dos eventos importantes, mas faltam fontes, severidade, destinatários ou testes.",
+        "3": "Alertas automáticos cobrem eventos relevantes suportados pelos sistemas e possuem destinatários/fluxo definidos e revisados."
+      },
+      "references": {
+        "nist": [
+          "DE.CM-09",
+          "DE.AE-06"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "F04",
+          "A08"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "regras de alerta, notificações, SIEM/RMM/EDR, testes de alertas",
+      "relatedQuestionIds": [
+        63,
+        65,
+        67
+      ]
+    },
+    {
+      "id": 65,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "A disponibilidade de servidores, sistemas, links, armazenamento e rotinas de backup é monitorada?",
+      "criteria": {
+        "0": "Disponibilidade de sistemas, links, armazenamento e backups críticos não é monitorada.",
+        "1": "A equipe descobre indisponibilidades principalmente por reclamação de usuários ou checagem manual.",
+        "2": "Há monitoramento de parte dos componentes críticos, mas faltam fontes, alertas, cobertura ou acompanhamento.",
+        "3": "Componentes críticos têm monitoramento de disponibilidade/capacidade e falhas relevantes geram aviso para responsáveis."
+      },
+      "references": {
+        "nist": [
+          "DE.CM-09",
+          "PR.IR-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "F04",
+          "A08"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "monitoramento de uptime, storage, link, backup, dashboards e alertas",
+      "relatedQuestionIds": [
+        64,
+        82
+      ]
+    },
+    {
+      "id": 66,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "A organização definiu situações suspeitas que devem ser investigadas, como acessos incomuns, exportações em massa e alterações administrativas?",
+      "criteria": {
+        "0": "Não há definição do que constitui situação suspeita que deve ser investigada.",
+        "1": "A investigação depende da experiência de cada técnico ou de eventos muito evidentes.",
+        "2": "Algumas situações suspeitas estão definidas, mas faltam cobertura, critérios ou comunicação aos responsáveis.",
+        "3": "Situações suspeitas relevantes estão definidas e existe orientação/fluxo para sua investigação e escalonamento."
+      },
+      "references": {
+        "nist": [
+          "DE.AE-02",
+          "DE.AE-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "casos de uso, critérios, playbooks, política e exemplos de investigação",
+      "relatedQuestionIds": [
+        35,
+        63,
+        71
+      ]
+    },
+    {
+      "id": 67,
+      "dimensionId": "D06",
+      "dimension": "Detecção e monitoramento",
+      "question": "Os mecanismos de detecção e os fluxos de alerta são testados ou validados periodicamente?",
+      "criteria": {
+        "0": "Mecanismos de detecção e fluxos de alerta não são testados/validados.",
+        "1": "A validação ocorre apenas quando um incidente real revela se o alerta funcionou.",
+        "2": "Alguns alertas/mecanismos são testados ocasionalmente, mas sem plano/cobertura consistente.",
+        "3": "Mecanismos e fluxos críticos são testados ou validados periodicamente e ajustes são registrados."
+      },
+      "references": {
+        "nist": [
+          "ID.IM-02",
+          "DE.AE-06"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F06",
+          "A03",
+          "A06"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "RISC 2.0",
+          "SISP"
+        ]
+      },
+      "expectedEvidence": "testes de alertas, simulações, validação de notificações e registros de correção",
+      "relatedQuestionIds": [
+        64,
+        85
+      ]
+    },
+    {
+      "id": 68,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Existe plano ou procedimento documentado para resposta a incidentes de segurança cibernética e privacidade?",
+      "criteria": {
+        "0": "Não existe plano/procedimento documentado de resposta a incidentes.",
+        "1": "A equipe reage com base na experiência, contatos pessoais e ações ad hoc.",
+        "2": "Existe documento/roteiro para os principais incidentes, mas com lacunas de papéis, comunicação, atualização ou exercícios.",
+        "3": "Existe plano/procedimento documentado, conhecido pelos responsáveis e atualizado conforme mudanças, testes ou incidentes."
+      },
+      "references": {
+        "nist": [
+          "ID.IM-04",
+          "RS.MA-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "plano de resposta, procedimento, playbooks, versão e aprovação",
+      "relatedQuestionIds": [
+        69,
+        71,
+        77
+      ]
+    },
+    {
+      "id": 69,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Estão definidos os responsáveis, substitutos e contatos internos e externos a serem acionados durante um incidente?",
+      "criteria": {
+        "0": "Responsáveis, substitutos e contatos para incidentes não estão definidos.",
+        "1": "A equipe sabe informalmente quem chamar, mas depende de pessoas específicas e contatos dispersos.",
+        "2": "Há lista/fluxo para os principais envolvidos, porém faltam substitutos, contatos externos ou atualização.",
+        "3": "Responsáveis, substitutos e contatos internos/externos relevantes estão definidos, acessíveis e atualizados."
+      },
+      "references": {
+        "nist": [
+          "GV.RR-02",
+          "RS.CO-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09",
+          "F08",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "matriz de contatos, escalonamento, papéis, substitutos e lista atualizada",
+      "relatedQuestionIds": [
+        68,
+        74,
+        76
+      ]
+    },
+    {
+      "id": 70,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Existe canal conhecido pelos colaboradores para comunicar incidentes, vulnerabilidades e comportamentos suspeitos?",
+      "criteria": {
+        "0": "Colaboradores não possuem canal conhecido para comunicar incidentes/vulnerabilidades/suspeitas.",
+        "1": "Há contato informal com TI, mas não é conhecido por todos ou não há orientação sobre o que reportar.",
+        "2": "Existe canal conhecido por boa parte das pessoas, mas faltam divulgação, registro ou cobertura de terceiros.",
+        "3": "Há canal simples e conhecido, com orientação do que comunicar e encaminhamento/registro adequado."
+      },
+      "references": {
+        "nist": [
+          "PR.AT-01",
+          "RS.MA-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09",
+          "F03",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "e-mail/canal/formulário, divulgação, registros de uso e orientação",
+      "relatedQuestionIds": [
+        35,
+        68,
+        71
+      ]
+    },
+    {
+      "id": 71,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Os eventos suspeitos são analisados e validados e, quando caracterizados como incidentes, são categorizados e priorizados conforme gravidade, impacto, urgência e possível envolvimento de dados pessoais?",
+      "criteria": {
+        "0": "Eventos suspeitos não são analisados de forma estruturada nem priorizados como incidentes.",
+        "1": "A análise ocorre caso a caso, sem critérios comuns de validação, gravidade ou impacto.",
+        "2": "Há triagem e priorização para a maioria dos eventos, mas faltam critérios formais, registro ou consideração consistente de dados pessoais.",
+        "3": "Eventos são validados e, quando incidentes, categorizados/priorizados por gravidade, impacto, urgência e envolvimento de dados pessoais."
+      },
+      "references": {
+        "nist": [
+          "RS.MA-02",
+          "RS.MA-03",
+          "DE.AE-08"
+        ],
+        "lgpd": [
+          "LGPD art. 48"
+        ],
+        "anpd": [
+          "ANPD — Resolução CD/ANPD nº 15/2024 — Regulamento de Comunicação de Incidente de Segurança"
+        ],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09",
+          "F07",
+          "F08"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "matriz de classificação, triagem, critérios de risco/dano e tickets",
+      "relatedQuestionIds": [
+        66,
+        68,
+        75
+      ]
+    },
+    {
+      "id": 72,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Existem procedimentos para conter incidentes e limitar sua propagação, considerando a preservação ou recuperação dos serviços essenciais?",
+      "criteria": {
+        "0": "Não há procedimentos para conter incidentes e limitar propagação.",
+        "1": "A contenção depende da experiência da equipe e pode afetar serviços sem coordenação.",
+        "2": "Há ações previstas para cenários principais, mas faltam documentação, autoridade, integração com continuidade ou testes.",
+        "3": "Procedimentos de contenção estão definidos para cenários relevantes e consideram propagação, segurança e preservação/recuperação dos serviços essenciais."
+      },
+      "references": {
+        "nist": [
+          "RS.MI-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "playbooks, isolamento, bloqueios, procedimentos de contenção e registros",
+      "relatedQuestionIds": [
+        68,
+        82,
+        93
+      ]
+    },
+    {
+      "id": 73,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Existem orientações para preservar logs, arquivos, registros e outras evidências necessárias à investigação, mantendo sua integridade e rastreabilidade?",
+      "criteria": {
+        "0": "Não existem orientações para preservar evidências durante incidentes.",
+        "1": "Logs/arquivos são guardados de forma informal, com risco de alteração, perda ou falta de rastreabilidade.",
+        "2": "Há orientação para preservar parte das evidências, mas faltam registro de ações, integridade, armazenamento ou responsáveis.",
+        "3": "Ações investigativas e evidências relevantes são registradas/preservadas com integridade e rastreabilidade compatíveis com o incidente."
+      },
+      "references": {
+        "nist": [
+          "RS.AN-06",
+          "RS.AN-07"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09",
+          "F03",
+          "F06"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "procedimento de preservação, cadeia de custódia quando aplicável, cópias e controles de integridade",
+      "relatedQuestionIds": [
+        58,
+        62,
+        71
+      ]
+    },
+    {
+      "id": 74,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Existe plano de comunicação interna com direção, áreas assistenciais, TI, jurídico, encarregado quando aplicável e demais envolvidos?",
+      "criteria": {
+        "0": "Não há plano/fluxo de comunicação interna durante incidentes.",
+        "1": "A comunicação depende de contatos informais e pode deixar áreas importantes sem informação.",
+        "2": "Há fluxo para os principais envolvidos, mas faltam critérios, substitutos, mensagens ou integração com direção, jurídico ou privacidade quando pertinente.",
+        "3": "A comunicação interna define públicos, responsáveis, canais e escalonamento para direção, áreas assistenciais, TI, jurídico, privacidade/encarregado quando aplicável e demais envolvidos."
+      },
+      "references": {
+        "nist": [
+          "RS.CO-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09",
+          "F10",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "matriz de comunicação, contatos, modelos de mensagem e escalonamento",
+      "relatedQuestionIds": [
+        38,
+        69,
+        75
+      ]
+    },
+    {
+      "id": 75,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Existem critérios e procedimentos para comunicações externas durante incidentes, incluindo a avaliação e a comunicação à ANPD e aos titulares quando exigida, além de parceiros ou autoridades aplicáveis?",
+      "criteria": {
+        "0": "Não existem critérios/procedimentos para comunicação externa/regulatória de incidentes.",
+        "1": "Comunicações são decididas caso a caso, sem fluxo definido para avaliar ANPD/titulares/parceiros/autoridades.",
+        "2": "Há orientação para comunicação, mas faltam critérios, responsáveis, prazos, documentação ou cobertura de públicos.",
+        "3": "Existe fluxo documentado para avaliar e realizar comunicações externas aplicáveis, incluindo ANPD e titulares quando exigido, com registro das decisões."
+      },
+      "references": {
+        "nist": [
+          "RS.CO-02",
+          "RS.CO-03"
+        ],
+        "lgpd": [
+          "LGPD art. 48"
+        ],
+        "anpd": [
+          "ANPD — Resolução CD/ANPD nº 15/2024 — Regulamento de Comunicação de Incidente de Segurança"
+        ],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09",
+          "F07",
+          "F08",
+          "A12",
+          "A13"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "procedimento, critérios de risco/dano, modelos, registros e responsáveis",
+      "relatedQuestionIds": [
+        38,
+        71,
+        74
+      ]
+    },
+    {
+      "id": 76,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Fornecedores e prestadores essenciais participam dos procedimentos de resposta quando o incidente envolve seus serviços ou acessos?",
+      "criteria": {
+        "0": "Fornecedores essenciais não são considerados na resposta a incidentes que envolvem seus serviços/acessos.",
+        "1": "A equipe aciona fornecedor apenas de forma reativa, sem contatos ou responsabilidades previamente definidos.",
+        "2": "Alguns fornecedores críticos possuem contatos/obrigações, mas faltam integração ao plano, testes ou cobertura contratual.",
+        "3": "Fornecedores essenciais têm contatos, responsabilidades e forma de participação definidos para incidentes que envolvam seus serviços/acessos."
+      },
+      "references": {
+        "nist": [
+          "GV.SC-08",
+          "RS.CO-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09",
+          "F08",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "contratos, SLA, contatos, exercícios, registros de incidentes com terceiros",
+      "relatedQuestionIds": [
+        11,
+        12,
+        68
+      ]
+    },
+    {
+      "id": 77,
+      "dimensionId": "D07",
+      "dimension": "Resposta a incidentes",
+      "question": "Após incidentes ou simulações, são registradas lições aprendidas e realizadas melhorias nos controles e procedimentos?",
+      "criteria": {
+        "0": "Incidentes/simulações não geram registro de lições aprendidas nem melhorias.",
+        "1": "A equipe comenta informalmente o ocorrido, mas ações de melhoria não são acompanhadas.",
+        "2": "Há registro e algumas ações após incidentes importantes, porém sem processo consistente de acompanhamento.",
+        "3": "Incidentes e simulações geram lições aprendidas, ações responsáveis/prazos e atualização de controles/procedimentos."
+      },
+      "references": {
+        "nist": [
+          "ID.IM-02",
+          "ID.IM-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F04",
+          "F09",
+          "A08",
+          "A09"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "RISC 2.0",
+          "Resolução ANPD 15/2024",
+          "Chen & Wald"
+        ]
+      },
+      "expectedEvidence": "post-mortem, lições aprendidas, plano de ação, atualização de controles",
+      "relatedQuestionIds": [
+        4,
+        67,
+        85
+      ]
+    },
+    {
+      "id": 78,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "Os sistemas, dados, configurações e serviços críticos que devem ser protegidos por backup estão formalmente definidos?",
+      "criteria": {
+        "0": "Não está definido o que deve ser incluído nas rotinas de backup.",
+        "1": "Backups existem por configuração histórica, sem lista clara de sistemas, dados e configurações críticas.",
+        "2": "A maior parte dos ativos críticos está incluída, mas há lacunas de inventário, configuração, documentação ou novos serviços.",
+        "3": "Sistemas, dados, configurações e serviços críticos a proteger por backup estão definidos e revisados quando o ambiente muda."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-11"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.2 — Segurança dos dados pessoais armazenados"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14",
+          "A10",
+          "A15"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "escopo de backup, lista de sistemas/dados, política e responsáveis",
+      "relatedQuestionIds": [
+        16,
+        79,
+        80
+      ]
+    },
+    {
+      "id": 79,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "A frequência e a retenção dos backups são compatíveis com a criticidade dos dados e com o impacto aceitável de perda?",
+      "criteria": {
+        "0": "Frequência e retenção de backup não são definidas conforme criticidade/perda aceitável.",
+        "1": "Há rotina de backup padrão para tudo, sem análise de necessidade de cada serviço.",
+        "2": "A maioria dos sistemas possui frequência/retenção razoáveis, mas há lacunas de criticidade, documentação ou ajuste.",
+        "3": "Frequência e retenção são definidas por criticidade e perda aceitável, com revisão periódica."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-11"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.2 — Segurança dos dados pessoais armazenados"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14",
+          "A10",
+          "A15"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "política, jobs, retenção, criticidade, justificativas e relatórios",
+      "relatedQuestionIds": [
+        78,
+        81,
+        82
+      ]
+    },
+    {
+      "id": 80,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "Existem cópias de segurança segregadas do ambiente principal — por exemplo, externas, offline, isoladas ou imutáveis — em nível compatível com o risco de falhas, desastres e ransomware?",
+      "criteria": {
+        "0": "Backups ficam apenas no mesmo ambiente ou sujeitos ao mesmo comprometimento/falha do original.",
+        "1": "Existe alguma cópia separada, mas sem isolamento/segregação confiável ou cobertura dos ativos críticos.",
+        "2": "A maioria dos backups críticos possui segregação externa/offline/isolada/imutável, mas há exceções ou testes incompletos.",
+        "3": "Há cópias segregadas do ambiente principal em nível compatível com o risco de desastre/ransomware, cobrindo os dados críticos."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-11",
+          "PR.IR-03"
+        ],
+        "lgpd": [],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.2 — Segurança dos dados pessoais armazenados"
+        ],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "arquitetura de backup, cópia offsite/offline/imutável, isolamento e testes",
+      "relatedQuestionIds": [
+        57,
+        78,
+        81
+      ]
+    },
+    {
+      "id": 81,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "São realizados testes periódicos de restauração para comprovar a integridade e a utilidade das cópias de segurança?",
+      "criteria": {
+        "0": "Restaurações de backup não são testadas.",
+        "1": "Testes ocorrem apenas quando há necessidade real ou de forma ocasional, sem registro.",
+        "2": "Há testes periódicos de parte dos sistemas/dados, mas faltam cobertura, critérios ou evidência de integridade.",
+        "3": "Testes periódicos comprovam restauração e integridade dos backups críticos, com resultados registrados e falhas corrigidas."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-11"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14",
+          "A10",
+          "A15"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "relatórios de restore, evidências de teste, amostragem, incidentes reais",
+      "relatedQuestionIds": [
+        78,
+        79,
+        85
+      ]
+    },
+    {
+      "id": 82,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "Existe plano documentado de recuperação dos sistemas e serviços críticos que estabeleça prioridades e objetivos aceitáveis de tempo de recuperação e perda de dados?",
+      "criteria": {
+        "0": "Não existe plano documentado de recuperação dos sistemas/serviços críticos.",
+        "1": "A recuperação depende da experiência da equipe, sem prioridades ou objetivos definidos.",
+        "2": "Existe plano para os principais serviços e alguma prioridade/RTO/RPO, mas faltam sistemas, atualização, responsáveis ou viabilidade comprovada.",
+        "3": "Plano documentado define prioridades, responsáveis e objetivos aceitáveis de tempo de recuperação/perda de dados para serviços críticos."
+      },
+      "references": {
+        "nist": [
+          "ID.IM-04",
+          "RC.RP-02"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14",
+          "F09",
+          "A09",
+          "A10",
+          "A15"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "DRP/plano de recuperação, responsáveis, etapas, dependências e versões",
+      "relatedQuestionIds": [
+        19,
+        83,
+        93
+      ]
+    },
+    {
+      "id": 83,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "Existem procedimentos alternativos ou manuais para manter atividades essenciais durante a indisponibilidade dos sistemas?",
+      "criteria": {
+        "0": "Não existem procedimentos alternativos para atividades essenciais durante indisponibilidade.",
+        "1": "As equipes improvisam procedimentos manuais quando sistemas ficam fora, sem orientação consolidada.",
+        "2": "Há contingência para etapas principais, mas faltam áreas, formulários, comunicação, treinamento ou atualização.",
+        "3": "Procedimentos alternativos documentados permitem manter atividades essenciais de forma segura durante indisponibilidades relevantes."
+      },
+      "references": {
+        "nist": [
+          "PR.IR-03",
+          "ID.IM-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14",
+          "A10",
+          "A15"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "procedimentos manuais, formulários, contingência, treinamento e testes",
+      "relatedQuestionIds": [
+        72,
+        82,
+        93
+      ]
+    },
+    {
+      "id": 84,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "A infraestrutura crítica possui medidas de redundância e proteção contra falhas de energia, comunicação, armazenamento ou ambiente?",
+      "criteria": {
+        "0": "Infraestrutura crítica não possui proteção/redundância compatível com falhas previsíveis.",
+        "1": "Há proteções básicas (ex.: nobreak), mas pontos únicos de falha críticos permanecem sem tratamento.",
+        "2": "Há redundância/proteção para parte dos componentes, mas faltam energia, links, armazenamento, ambiente ou testes.",
+        "3": "Medidas de proteção e redundância são proporcionais à criticidade e abrangem os principais riscos de energia, comunicação, armazenamento e ambiente."
+      },
+      "references": {
+        "nist": [
+          "PR.IR-02",
+          "PR.IR-03",
+          "PR.IR-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14",
+          "F09",
+          "A09"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "nobreak/gerador, redundância de links/storage, RAID, climatização, failover",
+      "relatedQuestionIds": [
+        57,
+        65,
+        82
+      ]
+    },
+    {
+      "id": 85,
+      "dimensionId": "D08",
+      "dimension": "Continuidade e recuperação",
+      "question": "Os planos de continuidade e recuperação são testados por exercícios, simulações ou ocorrências reais, e os resultados são utilizados para atualizar planos, recursos e responsabilidades?",
+      "criteria": {
+        "0": "Planos de continuidade/recuperação não são testados e não são atualizados com base em ocorrências.",
+        "1": "A organização aprende apenas durante falhas reais, sem exercício planejado ou registro de melhoria.",
+        "2": "Existem testes/simulações ou revisões após ocorrências, mas de forma parcial e sem acompanhamento consistente das melhorias.",
+        "3": "Planos são testados por exercícios/simulações/ocorrências e os resultados geram atualizações de recursos, responsabilidades e procedimentos."
+      },
+      "references": {
+        "nist": [
+          "ID.IM-02",
+          "ID.IM-03",
+          "ID.IM-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F01",
+          "F03",
+          "F04",
+          "A08",
+          "A14",
+          "A10",
+          "A15"
+        ],
+        "stateOfArt": [
+          "NIST SP 800-61r3",
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Nguyen et al.",
+          "Shah et al."
+        ]
+      },
+      "expectedEvidence": "atas, relatórios de simulação, testes de contingência e registros de incidentes",
+      "relatedQuestionIds": [
+        67,
+        77,
+        81
+      ]
+    },
+    {
+      "id": 86,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "A gestão de identidades dos sistemas de diagnóstico por imagem (RIS, PACS, portais e sistemas associados) contempla contas identificáveis, perfis compatíveis com a função e revisão periódica de usuários e permissões, inclusive para médicos externos quando aplicável?",
+      "criteria": {
+        "0": "RIS/PACS/portais não utilizam gestão de identidades adequada: contas são genéricas, perfis excessivos ou não há revisão.",
+        "1": "Há contas identificáveis em parte dos sistemas, mas perfis/revisões dependem de controles informais ou não cobrem médicos externos.",
+        "2": "A maioria dos sistemas usa contas/perfis adequados e revisões ocasionais, mas há exceções ou integrações/usuários externos com lacunas.",
+        "3": "RIS, PACS, portais e sistemas associados usam contas identificáveis, perfis por função e revisão periódica de usuários/permissões no escopo aplicável."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-01",
+          "PR.AA-05"
+        ],
+        "lgpd": [
+          "LGPD art. 46"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "dicomComplementary": [
+          "DICOM PS3.15 — User Identity and Audit profiles"
+        ],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "F08",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "listas de usuários, perfis, autenticação, logs e matriz de acesso",
+      "relatedQuestionIds": [
+        24,
+        26,
+        29
+      ]
+    },
+    {
+      "id": 87,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "RIS, PACS, portais e sistemas associados mantêm registros de auditoria suficientes para rastrear eventos relevantes, como acessos, alterações, exportações e outras ações suportadas pelo sistema?",
+      "criteria": {
+        "0": "RIS/PACS/portais não fornecem registros de auditoria úteis ou eles não são habilitados/retidos.",
+        "1": "Existem logs básicos (ex.: login), mas pouca rastreabilidade de acessos, alterações ou exportações.",
+        "2": "A maior parte dos sistemas relevantes mantém auditoria útil, porém há eventos não cobertos, retenção ou acesso aos logs incompletos.",
+        "3": "Sistemas de imagem mantêm registros de auditoria suficientes para rastrear ações relevantes suportadas pelo produto e apoiar investigação."
+      },
+      "references": {
+        "nist": [
+          "PR.PS-04",
+          "DE.CM-03"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "dicomComplementary": [
+          "DICOM PS3.15 — Audit Trail Message Format"
+        ],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "F08",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "audit logs RIS/PACS/VNA/portal, exemplos de eventos e retenção",
+      "relatedQuestionIds": [
+        58,
+        59,
+        62
+      ]
+    },
+    {
+      "id": 88,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "As integrações entre RIS, PACS, visualizadores, portais, modalidades e outros sistemas são protegidas por segmentação, controle de acesso e/ou mecanismos de comunicação segura compatíveis com o risco e com as capacidades técnicas existentes?",
+      "criteria": {
+        "0": "Integrações do fluxo de imagem não possuem segmentação, controle de acesso ou proteção de comunicação compatível.",
+        "1": "Há proteção em alguns enlaces/sistemas, mas integrações legadas ou modalidades permanecem em redes amplas ou com controles mínimos.",
+        "2": "As integrações críticas possuem segmentação/controle/proteção na maior parte do fluxo, com exceções conhecidas e medidas compensatórias parciais.",
+        "3": "RIS, PACS, visualizadores, portais, modalidades e integrações usam controles de segmentação, acesso e/ou comunicação segura proporcionais ao risco e às capacidades técnicas, com exceções conhecidas e medidas compensatórias quando necessárias."
+      },
+      "references": {
+        "nist": [
+          "PR.DS-02",
+          "PR.IR-01"
+        ],
+        "lgpd": [
+          "LGPD art. 46"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.3 — Segurança das comunicações"
+        ],
+        "dicomComplementary": [
+          "DICOM PS3.15 — Secure Transport Connection Profiles"
+        ],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "F04",
+          "F09"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "TLS/VPN, segmentação, ACLs, arquitetura DICOM/HL7, compensações documentadas",
+      "relatedQuestionIds": [
+        20,
+        52,
+        91
+      ]
+    },
+    {
+      "id": 89,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "Os acessos remotos de fabricantes e mantenedores a modalidades, estações e servidores são autorizados, restritos ao necessário, temporários quando possível e registrados?",
+      "criteria": {
+        "0": "Acessos remotos de fabricantes ou mantenedores são amplos, não autorizados ou não rastreáveis, sem restrições adequadas.",
+        "1": "O acesso é liberado sob demanda em alguns casos, mas há contas compartilhadas, permissões amplas, acesso permanente sem justificativa ou pouca supervisão.",
+        "2": "A maioria dos acessos é autorizada, restrita e registrada, porém existem exceções, acessos permanentes sem controle compensatório ou revisão insuficiente.",
+        "3": "Acessos remotos de suporte são autorizados, identificáveis, restritos ao necessário, temporários quando possível — ou compensados e revistos quando permanentes — e registrados."
+      },
+      "references": {
+        "nist": [
+          "GV.SC-07",
+          "PR.AA-05",
+          "DE.CM-06"
+        ],
+        "lgpd": [
+          "LGPD arts. 39 e 46, quando o fornecedor atuar no tratamento ou acessar dados pessoais"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.1.3 — Gerenciamento de contratos",
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso"
+        ],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "F08",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "VPN/bastion, aprovação, janela de acesso, conta nominal, logs e encerramento",
+      "relatedQuestionIds": [
+        12,
+        54,
+        76
+      ]
+    },
+    {
+      "id": 90,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "O envio, a exportação e a entrega de imagens e laudos por portal, mídia, link, integração ou outro meio possuem controles de acesso ou autenticação, prazo/restrição quando aplicável e rastreabilidade compatível com o risco?",
+      "criteria": {
+        "0": "Entrega/exportação de imagens e laudos ocorre sem controle adequado de acesso/autenticação ou rastreabilidade.",
+        "1": "Existem controles em alguns canais, mas links, mídias, portais ou exportações têm práticas inconsistentes.",
+        "2": "A maior parte dos canais possui autenticação/restrição e algum registro, porém há exceções ou controles de prazo/rastreabilidade incompletos.",
+        "3": "Principais meios de entrega/exportação possuem controle de acesso/autenticação, restrição/prazo quando pertinente e rastreabilidade compatível com o risco."
+      },
+      "references": {
+        "nist": [
+          "PR.AA-03",
+          "PR.DS-02",
+          "PR.PS-04"
+        ],
+        "lgpd": [
+          "LGPD arts. 6º, VII, e 46"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.1 — Controle de acesso",
+          "ANPD — Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte (2021), seção 3.2.3 — Segurança das comunicações"
+        ],
+        "dicomComplementary": [
+          "DICOM PS3.15 — Audit Trail / Secure Transport (quando aplicável ao fluxo DICOM)"
+        ],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "F08",
+          "F11"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "autenticação, links protegidos, logs, expiração, mídia segura e política",
+      "relatedQuestionIds": [
+        41,
+        43,
+        44
+      ]
+    },
+    {
+      "id": 91,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "As integrações e dependências críticas entre modalidades, RIS, PACS, sistemas de laudo e portais estão documentadas, e alterações relevantes são autorizadas e controladas?",
+      "criteria": {
+        "0": "Integrações/dependências críticas entre modalidades, RIS, PACS, laudo e portais não estão documentadas nem têm mudança controlada.",
+        "1": "A equipe conhece o fluxo informalmente e altera integrações sob demanda, com documentação parcial.",
+        "2": "As principais integrações estão documentadas e alterações geralmente são autorizadas, mas faltam inventário, histórico ou cobertura.",
+        "3": "Integrações/dependências críticas estão documentadas e mudanças relevantes são autorizadas, registradas e protegidas contra alteração indevida."
+      },
+      "references": {
+        "nist": [
+          "ID.AM-03",
+          "ID.RA-07",
+          "PR.PS-01"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "dicomComplementary": [
+          "DICOM PS3.15 — Application Configuration Management"
+        ],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "diagramas, AE Titles/integrações, change management, backups de configuração",
+      "relatedQuestionIds": [
+        14,
+        19,
+        88
+      ]
+    },
+    {
+      "id": 92,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "Quando imagens ou dados são utilizados fora da finalidade assistencial principal — como ensino, pesquisa, demonstração ou suporte — são aplicadas minimização, desidentificação ou outras medidas de proteção quando pertinentes?",
+      "criteria": {
+        "0": "Uso de imagens/dados fora da finalidade assistencial principal ocorre sem avaliar minimização/desidentificação/proteção.",
+        "1": "Há preocupação informal com anonimização, mas a prática depende da pessoa ou do destino.",
+        "2": "A maior parte dos usos para ensino/pesquisa/demonstração/suporte aplica medidas de proteção, porém há lacunas de padronização ou registro.",
+        "3": "Usos secundários aplicam minimização, desidentificação ou outras salvaguardas quando pertinentes à finalidade, risco e base aplicável."
+      },
+      "references": {
+        "nist": [
+          "GV.OC-03"
+        ],
+        "lgpd": [
+          "LGPD arts. 6º, I e III, 11, 12 e 13, conforme a finalidade secundária"
+        ],
+        "anpd": [
+          "ANPD — Guia Orientativo Tratamento de Dados Pessoais para Fins Acadêmicos e para a Realização de Estudos e Pesquisas (quando aplicável)"
+        ],
+        "dicomComplementary": [
+          "DICOM PS3.15 — Attribute Confidentiality Profiles"
+        ],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "A05",
+          "F07"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "procedimento de desidentificação, ferramenta, amostras anonimizadas, autorização e finalidade",
+      "relatedQuestionIds": [
+        17,
+        37,
+        44
+      ]
+    },
+    {
+      "id": 93,
+      "dimensionId": "D09",
+      "dimension": "Segurança de RIS/PACS e do fluxo de diagnóstico por imagem",
+      "question": "Existem procedimentos de contingência para manter ou restabelecer etapas essenciais do fluxo de diagnóstico por imagem, como realização, armazenamento, laudo e disponibilização de exames, quando RIS, PACS, rede ou integrações ficam indisponíveis?",
+      "criteria": {
+        "0": "Não existem procedimentos de contingência para o fluxo de diagnóstico por imagem quando RIS/PACS/rede/integrações ficam indisponíveis.",
+        "1": "As equipes improvisam alternativas com base na experiência, sem fluxo definido.",
+        "2": "Existem procedimentos para etapas principais, mas faltam cenários, comunicação, testes, armazenamento temporário ou recuperação ordenada.",
+        "3": "Há contingência definida e conhecida para manter/restabelecer realização, armazenamento, laudo e disponibilização de exames, com testes/revisões quando viável."
+      },
+      "references": {
+        "nist": [
+          "PR.IR-03",
+          "ID.IM-04"
+        ],
+        "lgpd": [],
+        "anpd": [],
+        "bibliography": [
+          "F03",
+          "F06",
+          "A03",
+          "A06",
+          "A07",
+          "F04",
+          "A08"
+        ],
+        "stateOfArt": [
+          "NIST SP 1800-24",
+          "Chen & Wald",
+          "Eichelberg et al.",
+          "Nguyen et al.",
+          "Shah et al.",
+          "Poleto et al."
+        ]
+      },
+      "expectedEvidence": "procedimentos downtime, fluxo manual, contingência de aquisição/laudo/entrega e testes",
+      "relatedQuestionIds": [
+        72,
+        82,
+        83
+      ]
+    }
+  ]
+}

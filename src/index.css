@@ -1,0 +1,35 @@
+@import "tailwindcss";
+/* Painel contextual da avaliação: evita que as versões móvel e desktop apareçam juntas. */
+.question-support-mobile {
+  display: block;
+}
+
+.question-support-desktop {
+  display: none;
+}
+
+@media (min-width: 1536px) {
+  .question-support-mobile {
+    display: none !important;
+  }
+
+  .question-support-desktop {
+    display: block !important;
+  }
+}
+
+
+@keyframes autoAdvanceTopLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-auto-advance-top-line {
+  animation: autoAdvanceTopLine 2s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-auto-advance-top-line {
+    animation-timing-function: steps(3, end);
+  }
+}
