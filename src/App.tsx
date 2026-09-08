@@ -54,6 +54,7 @@ export const App: React.FC = () => {
   const [autoAdvancePending, setAutoAdvancePending] = useState<boolean>(false);
   const [autoAdvanceProgressCycle, setAutoAdvanceProgressCycle] = useState<number>(0);
   const [comparisonAssessment, setComparisonAssessment] = useState<FullAssessment | null>(null);
+  const [showPrivacyNotice, setShowPrivacyNotice] = useState(false);
 
   const answers = assessment.answers;
   const currentQuestion = questions[currentQuestionIndex];
@@ -82,6 +83,7 @@ export const App: React.FC = () => {
       setCurrentQuestionIndex(resolveQuestionIndex(result.assessment.metadata.id));
       setCurrentView(result.preferences.currentView === 'results' ? 'results' : 'assessment');
       setAutoAdvance(result.preferences.autoAdvance ?? true);
+      setShowPrivacyNotice(result.preferences.privacyNoticeDismissed !== true);
       setLastSavedTime(
         new Date(result.assessment.metadata.updatedAt).toLocaleTimeString('pt-BR', {
           hour: '2-digit',
@@ -172,6 +174,11 @@ export const App: React.FC = () => {
   const handleAutoAdvanceChange = (enabled: boolean) => {
     setAutoAdvance(enabled);
     updateUiPreferences({ autoAdvance: enabled });
+  };
+
+  const handleDismissPrivacyNotice = () => {
+    setShowPrivacyNotice(false);
+    updateUiPreferences({ privacyNoticeDismissed: true });
   };
 
   const handleFinalizeAssessment = () => {
@@ -303,6 +310,23 @@ export const App: React.FC = () => {
         autoAdvancePending={autoAdvancePending}
         autoAdvanceProgressCycle={autoAdvanceProgressCycle}
       />
+
+      {showPrivacyNotice && (
+        <div className="bg-emerald-50 border-b border-emerald-200 text-emerald-950 px-4 py-2.5 text-xs">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <p className="leading-relaxed">
+              <strong>Privacidade local:</strong> as avaliações ficam somente neste navegador e não são enviadas pelo CiberInsight para servidores externos. Limpar os dados do site, trocar de domínio ou usar outro dispositivo pode remover o histórico local. Para avaliações importantes, exporte também um backup JSON.
+            </p>
+            <button
+              type="button"
+              onClick={handleDismissPrivacyNotice}
+              className="shrink-0 px-3 py-1.5 rounded-lg border border-emerald-300 bg-white hover:bg-emerald-100 text-emerald-800 font-bold transition-colors"
+            >
+              Entendi
+            </button>
+          </div>
+        </div>
+      )}
 
       {storageNotice && (
         <div className="bg-sky-50 border-b border-sky-200 text-sky-900 text-xs px-4 py-2 flex items-center justify-between gap-3">

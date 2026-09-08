@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Se você utilizar o CiberInsight em pesquisa ou trabalho acadêmico, cite este software."
+title: "CiberInsight"
+type: software
+authors:
+  - family-names: "Pimenta"
+    given-names: "Tiago"
+version: 0.5.0
+date-released: 2026-09-08
+url: "https://github.com/Tipimenta/CiberInsight"
+repository-code: "https://github.com/Tipimenta/CiberInsight"
+license: MIT
+abstract: >-
+  Aplicação web local-first para autoavaliação do nível de implementação de
+  controles de segurança cibernética em clínicas de diagnóstico por imagem.
+keywords:
+  - cybersecurity
+  - healthcare
+  - diagnostic imaging
+  - self-assessment
+  - NIST CSF
+  - LGPD
+  - RIS
+  - PACS

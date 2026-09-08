@@ -17,6 +17,7 @@ export interface UiPreferences {
   currentQuestionByAssessment?: Record<string, number>;
   currentView?: 'assessment' | 'results';
   autoAdvance?: boolean;
+  privacyNoticeDismissed?: boolean;
 }
 
 export interface AssessmentStorageBootstrapResult {

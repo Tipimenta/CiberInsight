@@ -1,5 +1,11 @@
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+coverage/
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,18 +13,33 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Local environment / secrets
+.env
+.env.*
+!.env.example
 *.local
 
-# Editor directories and files
+# Local assessment exports / backups
+*.backup.json
+assessment-*.json
+avaliacao-*.json
+ciberinsight-backup-*.json
+backups/
+exports/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
