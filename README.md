@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="public/cyberinsight-favicon-256.png" alt="CyberInsight" width="128" />
+  <img src="public/ciberinsight-favicon-256.png" alt="CiberInsight" width="128" />
 
-# CyberInsight
+# CiberInsight
 
 **Autoavaliação do nível de implementação de controles de segurança cibernética em clínicas de diagnóstico por imagem**
 
@@ -12,7 +12,7 @@
 
 ## Sobre
 
-O **CyberInsight** é uma aplicação web **local-first** criada para operacionalizar um instrumento estruturado de autoavaliação de controles de segurança cibernética no contexto de clínicas de diagnóstico por imagem.
+O **CiberInsight** é uma aplicação web **local-first** criada para operacionalizar um instrumento estruturado de autoavaliação de controles de segurança cibernética no contexto de clínicas de diagnóstico por imagem.
 
 O instrumento utiliza o **NIST Cybersecurity Framework (NIST CSF)** como referência estruturante, considera o contexto brasileiro de proteção de dados associado à **LGPD** e utiliza referências complementares documentadas no próprio instrumento.
 
@@ -53,7 +53,7 @@ Nenhuma transmissão externa dos dados da avaliação é necessária para o func
 
 ## O que o resultado significa
 
-O índice apresentado pelo CyberInsight representa o **nível de implementação dos controles avaliados segundo o instrumento**.
+O índice apresentado pelo CiberInsight representa o **nível de implementação dos controles avaliados segundo o instrumento**.
 
 Ele **não deve ser interpretado** como:
 
@@ -168,4 +168,4 @@ O repositório inclui [`vercel.json`](vercel.json) com configuração de build e
 
 O armazenamento local do navegador é vinculado à origem do site. Portanto, avaliações criadas em `localhost`, em um endereço `*.vercel.app` ou em um futuro domínio próprio não migram automaticamente entre essas origens. O backup JSON permanece a forma recomendada de portabilidade e cópia externa.
 
-O CyberInsight não requer analytics, banco de dados ou serviços de rastreamento para funcionar.
+O CiberInsight não requer analytics, banco de dados ou serviços de rastreamento para funcionar.

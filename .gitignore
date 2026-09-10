@@ -23,7 +23,7 @@ lerna-debug.log*
 *.backup.json
 assessment-*.json
 avaliacao-*.json
-cyberinsight-backup-*.json
+ciberinsight-backup-*.json
 backups/
 exports/
 

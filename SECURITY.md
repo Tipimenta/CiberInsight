@@ -2,7 +2,7 @@
 
 ## Modelo local-first
 
-O CyberInsight foi projetado para funcionar sem servidor de aplicação, login ou banco de dados em nuvem. As avaliações permanecem no navegador do usuário, com persistência local em IndexedDB e preferências leves em localStorage.
+O CiberInsight foi projetado para funcionar sem servidor de aplicação, login ou banco de dados em nuvem. As avaliações permanecem no navegador do usuário, com persistência local em IndexedDB e preferências leves em localStorage.
 
 ## Dados sensíveis
 

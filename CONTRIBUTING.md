@@ -1,4 +1,4 @@
-# Contribuindo com o CyberInsight
+# Contribuindo com o CiberInsight
 
 Contribuições de código, documentação e correções são bem-vindas.
 

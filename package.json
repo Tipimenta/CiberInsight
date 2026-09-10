@@ -1,5 +1,5 @@
 {
-  "name": "cyberinsight",
+  "name": "ciberinsight",
   "private": true,
   "version": "0.5.0",
   "type": "module",
@@ -36,11 +36,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tipimenta/CyberInsight.git"
+    "url": "git+https://github.com/Tipimenta/CiberInsight.git"
   },
-  "homepage": "https://github.com/Tipimenta/CyberInsight#readme",
+  "homepage": "https://github.com/Tipimenta/CiberInsight#readme",
   "bugs": {
-    "url": "https://github.com/Tipimenta/CyberInsight/issues"
+    "url": "https://github.com/Tipimenta/CiberInsight/issues"
   },
   "engines": {
     "node": ">=20"

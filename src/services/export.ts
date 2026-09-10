@@ -81,7 +81,7 @@ export function exportAssessmentJSON(assessment: FullAssessment, instrument: Ins
   const exportPayload = {
     schemaVersion: '1.3',
     instrument: {
-      name: 'CyberInsight — Instrumento de Autoavaliação de Controles de Segurança Cibernética',
+      name: 'CiberInsight — Instrumento de Autoavaliação de Controles de Segurança Cibernética',
       version: instrument.version,
       status: instrument.status || null,
       traceabilityNote: 'A exportação inclui as referências diretas cadastradas no instrumento. Referências bibliográficas metodológicas permanecem na matriz de desenvolvimento quando não são base direta do controle.',
@@ -154,7 +154,7 @@ export function exportToMarkdown(assessment: FullAssessment, instrument: Instrum
   const validationErrors = validateAssessment(instrument.questions, assessment.answers);
   const reviewLaterCount = instrument.questions.filter((q) => assessment.answers[q.id]?.reviewLater).length;
 
-  let md = `# CyberInsight — Relatório da Avaliação (${instrument.version})\n\n`;
+  let md = `# CiberInsight — Relatório da Avaliação (${instrument.version})\n\n`;
   md += `**Identificador anônimo:** ${assessment.metadata.id}\n`;
   md += `**Versão do instrumento usada na avaliação:** ${assessment.metadata.instrumentVersion}\n`;
   md += `**Início:** ${assessment.metadata.startedAt}\n`;
@@ -500,7 +500,7 @@ export function exportPrintableReportHTML(
   <div class="no-print notice">Relatório preparado para impressão/PDF. <button onclick="window.print()">Imprimir / Salvar como PDF</button> ou use <strong>Ctrl+P</strong>.</div>
 
   <header>
-    <h1>CyberInsight</h1>
+    <h1>CiberInsight</h1>
     <p class="report-subtitle">Autoavaliação do nível de implementação de controles de segurança cibernética</p>
     <p class="report-meta muted">Instrumento ${escapeHtml(instrument.version)} · Identificador anônimo ${escapeHtml(assessment.metadata.id)}</p>
     <p><strong>Início:</strong> ${escapeHtml(formatDate(assessment.metadata.startedAt))} · <strong>Atualização:</strong> ${escapeHtml(formatDate(assessment.metadata.updatedAt))} · <strong>Conclusão:</strong> ${escapeHtml(formatDate(assessment.metadata.completedAt))}</p>
