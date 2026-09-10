@@ -315,7 +315,7 @@ export const App: React.FC = () => {
         <div className="bg-emerald-50 border-b border-emerald-200 text-emerald-950 px-4 py-2.5 text-xs">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <p className="leading-relaxed">
-              <strong>Privacidade local:</strong> as avaliações ficam somente neste navegador e não são enviadas pelo CiberInsight para servidores externos. Limpar os dados do site, trocar de domínio ou usar outro dispositivo pode remover o histórico local. Para avaliações importantes, exporte também um backup JSON.
+              <strong>Privacidade local:</strong> as avaliações ficam somente neste navegador e não são enviadas pelo CyberInsight para servidores externos. Limpar os dados do site, trocar de domínio ou usar outro dispositivo pode remover o histórico local. Para avaliações importantes, exporte também um backup JSON.
             </p>
             <button
               type="button"

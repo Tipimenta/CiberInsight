@@ -11,14 +11,15 @@
 - adicionados `theme-color` e `apple-touch-icon`;
 - nenhuma alteração na metodologia, no scoring ou nas 93 questões.
 
-Todas as mudanças relevantes do CiberInsight serão registradas neste arquivo.
+Todas as mudanças relevantes do CyberInsight serão registradas neste arquivo.
 
 O projeto segue numeração semântica de versões quando uma versão for formalmente publicada.
 
 ## [0.5.0] - 2026-09-08
+- Marca do sistema padronizada como **CyberInsight** em interface, metadados, relatórios e documentação.
 
 ### Adicionado
-- Identidade **CiberInsight** e favicon próprio.
+- Identidade **CyberInsight** e favicon próprio.
 - Instrumento com 93 questões organizado em nove dimensões.
 - Guias de verificação e guias de evolução vinculados às questões.
 - Armazenamento local-first com histórico de avaliações em IndexedDB.

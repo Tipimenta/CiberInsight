@@ -1,10 +1,10 @@
-# Deploy do CiberInsight no Vercel
+# Deploy do CyberInsight no Vercel
 
 ## Caminho recomendado
 
 1. Publique primeiro o repositório no GitHub.
 2. No Vercel, escolha **Add New Project**.
-3. Importe o repositório `Tipimenta/CiberInsight`.
+3. Importe o repositório `Tipimenta/CyberInsight`.
 4. O projeto usa Vite. O arquivo `vercel.json` já informa:
    - build: `npm run build`
    - saída: `dist`
@@ -28,7 +28,7 @@ No endereço definitivo do Vercel:
 
 ## Importante sobre armazenamento local
 
-O CiberInsight é **local-first**. As avaliações são armazenadas no `IndexedDB` da origem do site.
+O CyberInsight é **local-first**. As avaliações são armazenadas no `IndexedDB` da origem do site.
 
 Na prática:
 
@@ -41,7 +41,7 @@ Por isso, mantenha o backup JSON para avaliações importantes.
 
 ## Privacidade
 
-Na arquitetura atual, o CiberInsight não precisa enviar respostas das avaliações para banco, API ou servidor de aplicação. O deploy hospeda os arquivos estáticos da aplicação.
+Na arquitetura atual, o CyberInsight não precisa enviar respostas das avaliações para banco, API ou servidor de aplicação. O deploy hospeda os arquivos estáticos da aplicação.
 
 Não configure ferramentas de analytics ou rastreamento sem reavaliar a documentação de privacidade do projeto.
 

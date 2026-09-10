@@ -1,14 +1,14 @@
 cff-version: 1.2.0
-message: "Se você utilizar o CiberInsight em pesquisa ou trabalho acadêmico, cite este software."
-title: "CiberInsight"
+message: "Se você utilizar o CyberInsight em pesquisa ou trabalho acadêmico, cite este software."
+title: "CyberInsight"
 type: software
 authors:
   - family-names: "Pimenta"
     given-names: "Tiago"
 version: 0.5.0
 date-released: 2026-09-08
-url: "https://github.com/Tipimenta/CiberInsight"
-repository-code: "https://github.com/Tipimenta/CiberInsight"
+url: "https://github.com/Tipimenta/CyberInsight"
+repository-code: "https://github.com/Tipimenta/CyberInsight"
 license: MIT
 abstract: >-
   Aplicação web local-first para autoavaliação do nível de implementação de

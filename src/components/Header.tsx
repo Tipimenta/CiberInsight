@@ -47,12 +47,12 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-2.5 min-w-0">
             <img
               src="/favicon.png"
-              alt="CiberInsight"
+              alt="CyberInsight"
               className="w-7 h-7 rounded-sm shrink-0"
             />
             <div className="min-w-0">
               <h1 className="text-sm sm:text-base font-bold tracking-tight text-slate-100 truncate">
-                CiberInsight
+                CyberInsight
               </h1>
               <p className="hidden sm:block text-[11px] text-slate-300 truncate">
                 Autoavaliação do nível de implementação de controles de segurança cibernética
