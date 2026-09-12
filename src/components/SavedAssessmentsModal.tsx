@@ -1,7 +1,23 @@
 import React, { useRef, useState } from 'react';
-import { EllipsisVertical, FileUp, GitCompareArrows, History, Play, X } from 'lucide-react';
+import {
+  EllipsisVertical,
+  FileUp,
+  GitCompareArrows,
+  HardDriveDownload,
+  History,
+  Play,
+  RotateCcw,
+  ShieldCheck,
+  X,
+} from 'lucide-react';
 import type { FullAssessment } from '../types';
-import { importAssessmentBackup } from '../services/storage';
+import {
+  importAssessmentBackupCollection,
+  listRecoverySnapshots,
+  type AssessmentRecoverySnapshot,
+  type ExternalAutoBackupStatus,
+  type StoragePersistenceStatus,
+} from '../services/storage';
 
 interface SavedAssessmentsModalProps {
   isOpen: boolean;
@@ -13,7 +29,13 @@ interface SavedAssessmentsModalProps {
   onOpenAssessment: (assessment: FullAssessment) => void;
   onCompareAssessment: (assessment: FullAssessment) => void;
   onExportAssessment: (assessment: FullAssessment) => void;
-  onImportAssessmentToHistory: (assessment: FullAssessment) => void;
+  onImportAssessmentsToHistory: (assessments: FullAssessment[]) => Promise<void>;
+  onRestoreRecoveryVersion: (assessment: FullAssessment) => Promise<void>;
+  externalBackupStatus: ExternalAutoBackupStatus;
+  persistenceStatus: StoragePersistenceStatus;
+  onEnableExternalBackup: () => Promise<void>;
+  onAuthorizeExternalBackup: () => Promise<void>;
+  onDisableExternalBackup: () => Promise<void>;
 }
 
 export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
@@ -26,10 +48,20 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
   onOpenAssessment,
   onCompareAssessment,
   onExportAssessment,
-  onImportAssessmentToHistory,
+  onImportAssessmentsToHistory,
+  onRestoreRecoveryVersion,
+  externalBackupStatus,
+  persistenceStatus,
+  onEnableExternalBackup,
+  onAuthorizeExternalBackup,
+  onDisableExternalBackup,
 }) => {
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [recoveryTarget, setRecoveryTarget] = useState<FullAssessment | null>(null);
+  const [recoverySnapshots, setRecoverySnapshots] = useState<AssessmentRecoverySnapshot[]>([]);
+  const [recoveryLoading, setRecoveryLoading] = useState(false);
+  const [backupActionLoading, setBackupActionLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   if (!isOpen) return null;
@@ -41,21 +73,76 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
 
     try {
       const content = await file.text();
-      const imported = importAssessmentBackup(
+      const imported = importAssessmentBackupCollection(
         content,
         currentInstrumentVersion,
         validQuestionIds
       );
-      onImportAssessmentToHistory(imported);
+      await onImportAssessmentsToHistory(imported);
       setMessage({
         type: 'success',
-        text: `Avaliação ${imported.metadata.id} importada para o histórico. Agora você pode abri-la ou compará-la.`,
+        text: imported.length === 1
+          ? `Avaliação ${imported[0].metadata.id} importada para o histórico.`
+          : `${imported.length} avaliações foram restauradas do backup para o histórico.`,
       });
     } catch (error) {
       setMessage({
         type: 'error',
         text: error instanceof Error ? error.message : 'Não foi possível importar a avaliação.',
       });
+    }
+  };
+
+  const handleOpenRecovery = async (item: FullAssessment) => {
+    setOpenMenuId(null);
+    setRecoveryTarget(item);
+    setRecoveryLoading(true);
+    setMessage(null);
+    try {
+      setRecoverySnapshots(await listRecoverySnapshots(item.metadata.id));
+    } catch (error) {
+      setRecoverySnapshots([]);
+      setMessage({
+        type: 'error',
+        text: error instanceof Error ? error.message : 'Não foi possível consultar as versões de recuperação.',
+      });
+    } finally {
+      setRecoveryLoading(false);
+    }
+  };
+
+  const handleRestoreSnapshot = async (snapshot: AssessmentRecoverySnapshot) => {
+    const confirmed = window.confirm(
+      `Restaurar a avaliação ${snapshot.assessmentId} para o estado salvo em ${formatDate(snapshot.createdAt)}? O estado atual também será protegido antes da restauração.`
+    );
+    if (!confirmed) return;
+
+    try {
+      await onRestoreRecoveryVersion(snapshot.assessment);
+      setMessage({ type: 'success', text: 'Versão de recuperação restaurada com sucesso.' });
+      setRecoveryTarget(null);
+      setRecoverySnapshots([]);
+    } catch (error) {
+      setMessage({
+        type: 'error',
+        text: error instanceof Error ? error.message : 'Não foi possível restaurar a versão selecionada.',
+      });
+    }
+  };
+
+  const runBackupAction = async (action: () => Promise<void>, successMessage: string) => {
+    setBackupActionLoading(true);
+    setMessage(null);
+    try {
+      await action();
+      setMessage({ type: 'success', text: successMessage });
+    } catch (error) {
+      setMessage({
+        type: 'error',
+        text: error instanceof Error ? error.message : 'Não foi possível alterar o backup automático.',
+      });
+    } finally {
+      setBackupActionLoading(false);
     }
   };
 
@@ -79,7 +166,7 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
             <div>
               <h3 className="text-base font-bold text-slate-900">Avaliações</h3>
               <p className="text-xs text-slate-600 leading-relaxed mt-1">
-                Abra uma avaliação anterior ou compare-a com a atual. Tudo permanece armazenado localmente neste navegador.
+                Abra uma avaliação anterior ou compare-a com a atual. As cópias automáticas de recuperação ficam separadas e não aparecem nesta lista.
               </p>
             </div>
           </div>
@@ -90,7 +177,7 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
             className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 shrink-0"
           >
             <FileUp className="w-4 h-4" />
-            Importar avaliação de outro dispositivo
+            Importar backup
           </button>
           <input
             ref={fileInputRef}
@@ -107,6 +194,58 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
           </div>
         )}
 
+        {recoveryTarget && (
+          <div className="p-4 rounded-xl border border-amber-200 bg-amber-50/60 space-y-3">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <RotateCcw className="w-4 h-4 text-amber-700" />
+                  Recuperação — {recoveryTarget.metadata.id}
+                </h4>
+                <p className="text-[11px] text-slate-600 mt-1">
+                  São mantidas no máximo 5 versões internas. Elas servem apenas para recuperação e nunca entram no comparativo.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setRecoveryTarget(null);
+                  setRecoverySnapshots([]);
+                }}
+                className="text-xs font-semibold text-slate-600 hover:text-slate-900"
+              >
+                Fechar
+              </button>
+            </div>
+
+            {recoveryLoading ? (
+              <div className="text-xs text-slate-600">Consultando versões…</div>
+            ) : recoverySnapshots.length === 0 ? (
+              <div className="text-xs text-slate-600">Ainda não há versões de recuperação para esta avaliação.</div>
+            ) : (
+              <div className="space-y-2">
+                {recoverySnapshots.map((snapshot) => {
+                  const answered = countAnswered(snapshot.assessment);
+                  return (
+                    <div key={snapshot.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-white border border-amber-200 rounded-lg px-3 py-2">
+                      <div className="text-xs text-slate-700">
+                        <strong>{formatDate(snapshot.createdAt)}</strong> · {answered}/{validQuestionIds.length} respondidas
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => void handleRestoreSnapshot(snapshot)}
+                        className="px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-xs font-bold text-amber-900"
+                      >
+                        Restaurar esta versão
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+
         {assessments.length === 0 ? (
           <div className="p-4 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-600">
             Nenhuma avaliação local encontrada.
@@ -116,7 +255,7 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
             {assessments.map((item) => {
               const isCurrent = item.metadata.id === currentAssessmentId;
               const compatible = item.metadata.instrumentVersion === currentInstrumentVersion;
-              const answered = Object.values(item.answers).filter((answer) => answer.score !== null && answer.score !== undefined).length;
+              const answered = countAnswered(item);
 
               return (
                 <div
@@ -175,7 +314,7 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
                       </button>
 
                       {openMenuId === item.metadata.id && (
-                        <div className="absolute right-0 top-11 z-10 min-w-48 p-1.5 rounded-lg border border-slate-200 bg-white shadow-lg">
+                        <div className="absolute right-0 top-11 z-10 min-w-56 p-1.5 rounded-lg border border-slate-200 bg-white shadow-lg">
                           <button
                             type="button"
                             onClick={() => {
@@ -185,6 +324,13 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
                             className="w-full text-left px-3 py-2 rounded-md hover:bg-slate-50 text-xs font-medium text-slate-700"
                           >
                             Exportar backup JSON
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => void handleOpenRecovery(item)}
+                            className="w-full text-left px-3 py-2 rounded-md hover:bg-slate-50 text-xs font-medium text-slate-700"
+                          >
+                            Recuperar versão anterior
                           </button>
                         </div>
                       )}
@@ -196,19 +342,100 @@ export const SavedAssessmentsModal: React.FC<SavedAssessmentsModalProps> = ({
           </div>
         )}
 
-        <div className="p-3 rounded-lg border border-slate-200 bg-slate-50 text-[11px] text-slate-600 leading-relaxed">
-          <strong>Backup:</strong> as avaliações permanecem somente neste navegador. Para guardar uma cópia externa, use <strong>⋯ → Exportar backup JSON</strong> na avaliação desejada.
+        <div className="p-4 rounded-xl border border-emerald-200 bg-emerald-50/60 space-y-3">
+          <div className="flex items-start gap-3">
+            <ShieldCheck className="w-5 h-5 text-emerald-700 mt-0.5" />
+            <div className="min-w-0 flex-1">
+              <h4 className="text-sm font-bold text-slate-900">Proteção das avaliações</h4>
+              <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                O salvamento principal continua no IndexedDB. O CiberInsight mantém até 5 versões internas por avaliação e um espelho de emergência. Essas cópias não aparecem no histórico e não podem ser escolhidas no comparativo.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-2 text-[11px]">
+            <div className="rounded-lg border border-emerald-200 bg-white px-3 py-2">
+              <strong>Armazenamento persistente:</strong>{' '}
+              {persistenceStatus === 'granted' ? 'ativo' : persistenceStatus === 'unsupported' ? 'não suportado' : 'não garantido pelo navegador'}
+            </div>
+            <div className="rounded-lg border border-emerald-200 bg-white px-3 py-2">
+              <strong>Backup externo:</strong>{' '}
+              {externalBackupLabel(externalBackupStatus)}
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-emerald-200 bg-white px-3 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+              <div className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                <HardDriveDownload className="w-4 h-4" />
+                Backup automático externo
+              </div>
+              <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                Opcional. Você escolhe <strong>um único arquivo JSON</strong> no computador. Ele é sobrescrito automaticamente com todas as avaliações, portanto não cria dezenas de backups nem interfere no comparativo. Se o navegador for removido, esse arquivo continua no computador e pode ser importado depois.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 shrink-0">
+              {externalBackupStatus === 'inactive' && (
+                <button
+                  type="button"
+                  disabled={backupActionLoading}
+                  onClick={() => void runBackupAction(onEnableExternalBackup, 'Backup automático externo ativado. O mesmo arquivo será atualizado nas próximas alterações.')}
+                  className="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold disabled:opacity-50"
+                >
+                  Ativar
+                </button>
+              )}
+              {externalBackupStatus === 'permission-needed' && (
+                <button
+                  type="button"
+                  disabled={backupActionLoading}
+                  onClick={() => void runBackupAction(onAuthorizeExternalBackup, 'Permissão renovada e backup automático atualizado.')}
+                  className="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold disabled:opacity-50"
+                >
+                  Reautorizar
+                </button>
+              )}
+              {(externalBackupStatus === 'active' || externalBackupStatus === 'permission-needed') && (
+                <button
+                  type="button"
+                  disabled={backupActionLoading}
+                  onClick={() => void runBackupAction(onDisableExternalBackup, 'Backup automático externo desativado. O arquivo já criado permanece no computador.')}
+                  className="px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold disabled:opacity-50"
+                >
+                  Desativar
+                </button>
+              )}
+              {externalBackupStatus === 'unsupported' && (
+                <span className="text-[11px] text-slate-500">Disponível no Chrome/Edge desktop.</span>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
+function countAnswered(assessment: FullAssessment): number {
+  return Object.values(assessment.answers).filter(
+    (answer) => answer.score !== null && answer.score !== undefined
+  ).length;
+}
+
 function formatDate(value?: string): string {
   if (!value) return 'data não informada';
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   return date.toLocaleString('pt-BR');
+}
+
+function externalBackupLabel(status: ExternalAutoBackupStatus): string {
+  switch (status) {
+    case 'active': return 'ativo — 1 arquivo é atualizado automaticamente';
+    case 'permission-needed': return 'precisa de autorização do navegador';
+    case 'unsupported': return 'não suportado neste navegador';
+    default: return 'desativado';
+  }
 }
 
 export default SavedAssessmentsModal;

@@ -55,3 +55,15 @@ O `vercel.json` inclui headers básicos e conservadores:
 - `Permissions-Policy` desabilitando câmera, microfone, geolocalização, pagamento e USB
 
 Uma Content Security Policy (CSP) rígida não foi adicionada nesta etapa para evitar quebrar recursos do frontend/relatório sem uma rodada específica de testes.
+
+## Verificação da proteção de dados — v0.5.1
+
+Após o deploy, valide também:
+
+1. responda algumas questões e confirme que o cabeçalho mostra o horário de salvamento;
+2. feche e abra novamente a aba e confirme que a avaliação continua disponível;
+3. em **Avaliações → ⋯ → Recuperar versão anterior**, confirme que as versões internas aparecem separadas do histórico normal;
+4. confirme que essas versões não aparecem como opção em **Comparar**;
+5. opcionalmente, em **Avaliações → Proteção das avaliações**, ative o backup automático externo e escolha `CiberInsight_autobackup.json`;
+6. altere uma resposta e confirme que o mesmo arquivo externo foi atualizado, sem criar arquivos adicionais;
+7. teste a importação desse arquivo em outro perfil/navegador para confirmar a restauração do histórico.

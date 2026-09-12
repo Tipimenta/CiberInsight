@@ -17,14 +17,21 @@ import { ControlGuidanceModal } from './components/ControlGuidanceModal';
 import { ExportModal } from './components/ExportModal';
 import { SavedAssessmentsModal } from './components/SavedAssessmentsModal';
 import {
+  authorizeExternalAutoBackup,
   createNewAssessment,
+  disableExternalAutoBackup,
+  enableExternalAutoBackup,
   exportAssessmentBackup,
+  getExternalAutoBackupStatus,
+  getStoragePersistenceStatus,
   getUiPreferences,
   initializeAssessmentStorage,
   rememberQuestionForAssessment,
   saveAssessment,
   updateUiPreferences,
   upsertAssessment,
+  type ExternalAutoBackupStatus,
+  type StoragePersistenceStatus,
 } from './services/storage';
 import { calculateProgress } from './services/scoring';
 import { isNumericScoreValue } from './services/scoreValue';
@@ -55,6 +62,8 @@ export const App: React.FC = () => {
   const [autoAdvanceProgressCycle, setAutoAdvanceProgressCycle] = useState<number>(0);
   const [comparisonAssessment, setComparisonAssessment] = useState<FullAssessment | null>(null);
   const [showPrivacyNotice, setShowPrivacyNotice] = useState(false);
+  const [externalBackupStatus, setExternalBackupStatus] = useState<ExternalAutoBackupStatus>('inactive');
+  const [persistenceStatus, setPersistenceStatus] = useState<StoragePersistenceStatus>('not-granted');
 
   const answers = assessment.answers;
   const currentQuestion = questions[currentQuestionIndex];
@@ -91,6 +100,8 @@ export const App: React.FC = () => {
         })
       );
       setStorageReady(true);
+      void getExternalAutoBackupStatus().then(setExternalBackupStatus);
+      void getStoragePersistenceStatus().then(setPersistenceStatus);
     };
 
     void initialize();
@@ -214,15 +225,71 @@ export const App: React.FC = () => {
     scrollToQuestionTop();
   };
 
-  const handleImportAssessmentToHistory = (imported: FullAssessment) => {
-    if (imported.metadata.instrumentVersion !== instrument.version) {
-      throw new Error('A avaliação importada usa outra versão do instrumento.');
+  const handleImportAssessmentsToHistory = async (importedAssessments: FullAssessment[]) => {
+    const compatible = importedAssessments.filter(
+      (item) => item.metadata.instrumentVersion === instrument.version
+    );
+    if (compatible.length === 0) {
+      throw new Error('O arquivo não contém avaliações compatíveis com esta versão do instrumento.');
     }
-    if (imported.metadata.id === assessment.metadata.id) {
-      throw new Error('Este arquivo pertence à avaliação que já está aberta. Para evitar sobrescrever o trabalho atual, ele não foi importado como uma segunda avaliação.');
+
+    const safeToImport = compatible.filter((item) => item.metadata.id !== assessment.metadata.id);
+    if (safeToImport.length === 0) {
+      throw new Error('O backup contém somente a avaliação que já está aberta. Use uma versão de recuperação caso queira voltar a um estado anterior.');
     }
-    persistAssessment(imported);
-    setStorageNotice(`Avaliação ${imported.metadata.id} importada para o histórico local.`);
+
+    for (const item of safeToImport) {
+      await saveAssessment(item);
+    }
+    setSavedAssessments((current) =>
+      safeToImport.reduce((acc, item) => upsertAssessment(acc, item), current)
+    );
+    setStorageNotice(
+      safeToImport.length === 1
+        ? `Avaliação ${safeToImport[0].metadata.id} importada para o histórico local.`
+        : `${safeToImport.length} avaliações foram restauradas para o histórico local.`
+    );
+  };
+
+  const handleRestoreRecoveryVersion = async (recovered: FullAssessment) => {
+    const restored: FullAssessment = {
+      ...recovered,
+      metadata: {
+        ...recovered.metadata,
+        updatedAt: new Date().toISOString(),
+      },
+    };
+    await saveAssessment(restored);
+    setSavedAssessments((current) => upsertAssessment(current, restored));
+    if (restored.metadata.id === assessment.metadata.id) {
+      setAssessment(restored);
+      setCurrentQuestionIndex(resolveQuestionIndex(restored.metadata.id));
+    }
+    setLastSavedTime(
+      new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+    );
+    setStorageNotice(`Avaliação ${restored.metadata.id} restaurada a partir de uma versão de recuperação.`);
+  };
+
+  const handleEnableExternalBackup = async () => {
+    const status = await enableExternalAutoBackup();
+    setExternalBackupStatus(status);
+  };
+
+  const handleAuthorizeExternalBackup = async () => {
+    const status = await authorizeExternalAutoBackup();
+    setExternalBackupStatus(status);
+  };
+
+  const handleDisableExternalBackup = async () => {
+    await disableExternalAutoBackup();
+    setExternalBackupStatus('inactive');
+  };
+
+  const handleOpenSavedAssessments = () => {
+    setIsSavedAssessmentsOpen(true);
+    void getExternalAutoBackupStatus().then(setExternalBackupStatus);
+    void getStoragePersistenceStatus().then(setPersistenceStatus);
   };
 
   const handleCreateNewAssessment = () => {
@@ -303,7 +370,7 @@ export const App: React.FC = () => {
         assessmentId={assessment.metadata.id}
         lastSavedTime={lastSavedTime}
         onCreateNewAssessment={handleCreateNewAssessment}
-        onOpenSavedAssessments={() => setIsSavedAssessmentsOpen(true)}
+        onOpenSavedAssessments={handleOpenSavedAssessments}
         onOpenExportModal={() => setIsExportModalOpen(true)}
         onSwitchView={handleSwitchView}
         currentView={currentView}
@@ -315,7 +382,7 @@ export const App: React.FC = () => {
         <div className="bg-emerald-50 border-b border-emerald-200 text-emerald-950 px-4 py-2.5 text-xs">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <p className="leading-relaxed">
-              <strong>Privacidade local:</strong> as avaliações ficam somente neste navegador e não são enviadas pelo CiberInsight para servidores externos. Limpar os dados do site, trocar de domínio ou usar outro dispositivo pode remover o histórico local. Para avaliações importantes, exporte também um backup JSON.
+              <strong>Privacidade local:</strong> as avaliações ficam somente neste navegador e não são enviadas pelo CiberInsight para servidores externos. Limpar os dados do site, trocar de domínio ou usar outro dispositivo pode remover o histórico local. Para avaliações importantes, você também pode ativar um único arquivo de backup automático externo em Avaliações.
             </p>
             <button
               type="button"
@@ -433,7 +500,7 @@ export const App: React.FC = () => {
               currentAssessmentUpdatedAt={assessment.metadata.updatedAt}
               comparisonAssessment={comparisonAssessment}
               onOpenExportModal={() => setIsExportModalOpen(true)}
-              onOpenSavedAssessments={() => setIsSavedAssessmentsOpen(true)}
+              onOpenSavedAssessments={handleOpenSavedAssessments}
             />
           )}
         </main>
@@ -466,7 +533,13 @@ export const App: React.FC = () => {
         onOpenAssessment={handleOpenSavedAssessment}
         onCompareAssessment={handleCompareSavedAssessment}
         onExportAssessment={handleExportAssessmentBackup}
-        onImportAssessmentToHistory={handleImportAssessmentToHistory}
+        onImportAssessmentsToHistory={handleImportAssessmentsToHistory}
+        onRestoreRecoveryVersion={handleRestoreRecoveryVersion}
+        externalBackupStatus={externalBackupStatus}
+        persistenceStatus={persistenceStatus}
+        onEnableExternalBackup={handleEnableExternalBackup}
+        onAuthorizeExternalBackup={handleAuthorizeExternalBackup}
+        onDisableExternalBackup={handleDisableExternalBackup}
       />
     </div>
   );

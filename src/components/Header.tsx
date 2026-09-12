@@ -138,7 +138,7 @@ export const Header: React.FC<HeaderProps> = ({
           {lastSavedTime && (
             <span className="hidden lg:flex text-[10px] text-emerald-400 items-center gap-1" title={`Último salvamento local às ${lastSavedTime}`}>
               <Save className="w-3 h-3" />
-              Salvo
+              Salvo {lastSavedTime}
             </span>
           )}
         </div>

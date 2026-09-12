@@ -169,3 +169,16 @@ O repositório inclui [`vercel.json`](vercel.json) com configuração de build e
 O armazenamento local do navegador é vinculado à origem do site. Portanto, avaliações criadas em `localhost`, em um endereço `*.vercel.app` ou em um futuro domínio próprio não migram automaticamente entre essas origens. O backup JSON permanece a forma recomendada de portabilidade e cópia externa.
 
 O CiberInsight não requer analytics, banco de dados ou serviços de rastreamento para funcionar.
+
+## Proteção contra perda de dados
+
+A partir da versão 0.5.1, o CiberInsight utiliza camadas adicionais de proteção sem misturar cópias técnicas com o histórico de avaliações:
+
+- cada alteração continua sendo salva no IndexedDB;
+- a alteração mais recente também é espelhada no `localStorage` para recuperação de emergência;
+- são mantidas até **5 versões internas de recuperação por avaliação** em um object store separado;
+- versões de recuperação **não aparecem na lista de Avaliações e não participam do comparativo**;
+- a aplicação solicita armazenamento persistente ao navegador quando suportado;
+- opcionalmente, o usuário pode escolher **um único arquivo externo** (`CiberInsight_autobackup.json`), que é sobrescrito automaticamente com todas as avaliações. Esse arquivo não cria novas avaliações e não gera uma sequência de downloads.
+
+O backup externo é especialmente útil contra perda causada por remoção do navegador ou limpeza dos dados do site, porque o arquivo permanece fora do armazenamento do navegador. A ativação depende da File System Access API, atualmente melhor suportada em Chrome e Edge para desktop.

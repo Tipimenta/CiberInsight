@@ -15,6 +15,18 @@ Todas as mudanças relevantes do CiberInsight serão registradas neste arquivo.
 
 O projeto segue numeração semântica de versões quando uma versão for formalmente publicada.
 
+## [0.5.1] - 2026-09-12
+
+### Proteção de dados
+- adicionado espelho síncrono de emergência no `localStorage`;
+- adicionadas até 5 versões internas de recuperação por avaliação, separadas do histórico normal;
+- versões de recuperação não aparecem no comparativo;
+- solicitação de armazenamento persistente do navegador quando suportado;
+- adicionado backup externo automático opcional em um único arquivo JSON, sobrescrito com o histórico real de avaliações;
+- importação passa a reconhecer também o backup completo automático;
+- exibido horário do último salvamento no cabeçalho;
+- nenhuma alteração nas 93 questões, critérios, scoring ou regra de NS/NA.
+
 ## [0.5.0] - 2026-09-08
 
 ### Adicionado
